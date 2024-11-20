@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +7,23 @@
   }
   
   :root {
-    
+    --primary: #007bff;
+    --white: #fff;
+    --black: #000;
+    --green: #2ccd79;
+    --text-color: #646464;
+
+    --font-family: "Noto Sans", 'sans-serif';
+
+
   }
   
   html {
     font-size: 62.5%;
   }
 
-  // Scrollbar CSS
+  /* // Scrollbar CSS */
 html *::-webkit-scrollbar {
-    // height: 10px;
     width: 0px;
   }
   html *::-webkit-scrollbar-thumb {
@@ -25,14 +34,45 @@ html *::-webkit-scrollbar {
     border-radius: 0px;
     background-color: rgba(0, 0, 0, 0);
   }
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+  
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
   
 body {
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
     color: var(--text-color);
     overflow-y: overlay;
-    //   tối ưu sao để hiển thị nhanh nhất
+    /* //   tối ưu sao để hiển thị nhanh nhất */
     text-rendering: optimizeSpeed;
   }
+  
+  /* Tippy box */
+.tippy-box {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.6rem;  line-height: 2.2rem;
+  background-color: rgba(84, 84, 84, 0.92);
+}
+    
+.tippy-arrow {
+ color: rgba(84, 84, 84, 0.92);
+}
+    
+.tippy-content {
+  padding: 8px 9px;
+}
 
+  
+  
   

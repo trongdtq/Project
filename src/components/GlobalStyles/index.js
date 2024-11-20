@@ -1,1 +1,1 @@
-export {default} from './GlobalStyles.module.scss'
+export { default } from './GlobalStyles.module.scss';
