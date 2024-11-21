@@ -11,11 +11,43 @@ import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import ShowPicture from './ShowPicture';
 import Image from '~/components/Image';
+import Menu from '~/components/Menu';
+import { faAddressCard, faCreditCard, faMoneyBill1, faStar } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Header() {
   const currentUser = true;
+
+  const MENU_ITEMS = [
+    {
+      icon: <FontAwesomeIcon icon={faAddressCard} />,
+      title: 'My Account ',
+      to: './account',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faStar} />,
+      title: 'Images Collection',
+      to: './collection',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faCreditCard} />,
+      title: 'Recharge Record',
+      to: './recharge',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faMoneyBill1} />,
+      title: 'Request Invoice',
+      to: './request',
+    },
+    {
+      icon: '',
+      title: 'Logout',
+      to: './logout',
+      separate: true, // hiển thị vạch
+    },
+  ];
+
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
@@ -26,22 +58,20 @@ function Header() {
 
         {/* Picture */}
         <ShowPicture>
-          <span className={cx('menu-picture')}>picture</span>
+          <span className={cx('menu-picture')}>Picture</span>
         </ShowPicture>
 
         {/* Actions */}
         <div className={cx('actions')}>
-          <Button
-            text
-            to={config.routes.charge}
-            leftIcon={<FontAwesomeIcon icon={faDollarSign} />}
-            className={cx('price')}
-          >
-            price
+          <Button text to={config.routes.charge} className={cx('price')}>
+            <span style={{ marginLeft: -8 }}>
+              <FontAwesomeIcon icon={faDollarSign} />
+            </span>
+            Price
           </Button>
 
           <Tippy content="For visual customer service, please add account!!!" placement="bottom">
-            <span className={cx('customer-service')}>online customer service</span>
+            <span className={cx('customer-service')}>Online customer service</span>
           </Tippy>
 
           {/* shopping cart */}
@@ -49,25 +79,27 @@ function Header() {
             Cart
           </Button>
 
+          {/* Menu */}
           {currentUser ? (
-            <div className={cx('user-avatar')}>
-              <Image
-                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/c9b27b91966166745b39845b8424fb26~c5_100x100.jpeg?lk3s=a5d48078&nonce=50556&refresh_token=0cb4f6f3d0286bbb2efd80439dd78f63&x-expires=1731416400&x-signature=8Muv7HY0A0SG4jmA1hSiaXte44U%3D&shp=a5d48078&shcp=81f88b70"
-                className={cx('img-avatar')}
-                alt="user name"
-              />
-            </div>
+            <Menu items={MENU_ITEMS}>
+              <div className={cx('user-avatar')}>
+                <Image
+                  src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/c9b27b91966166745b39845b8424fb26~c5_100x100.jpeg?lk3s=a5d48078&nonce=50556&refresh_token=0cb4f6f3d0286bbb2efd80439dd78f63&x-expires=1731416400&x-signature=8Muv7HY0A0SG4jmA1hSiaXte44U%3D&shp=a5d48078&shcp=81f88b70"
+                  className={cx('img-avatar')}
+                  alt="user name"
+                />
+              </div>
+            </Menu>
           ) : (
             <>
               {/* Login use Link tab*/}
-              <Button text className={cx('login')}>
+              <Button to={config.routes.login} text className={cx('login-btn')}>
                 Login/Register
               </Button>
 
               {/* Menu , avatar */}
             </>
           )}
-
           {/* <Menu></Menu> */}
         </div>
       </div>

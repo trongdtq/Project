@@ -10,7 +10,10 @@ function Button({
   to,
   href,
   text = false,
+  square = false,
   disable = false,
+  small = false,
+  large = false,
   children,
   className,
   leftIcon,
@@ -43,8 +46,11 @@ function Button({
 
   const classes = cx('wrapper', {
     text,
+    square,
     disable,
     [className]: className,
+    small,
+    large,
   });
 
   return (
@@ -61,6 +67,7 @@ Button.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
   text: PropTypes.bool,
+  square: PropTypes.bool,
   disable: PropTypes.bool,
   className: PropTypes.string,
   leftIcon: PropTypes.node,

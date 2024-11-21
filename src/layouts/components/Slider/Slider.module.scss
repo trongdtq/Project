@@ -1,0 +1,22 @@
+.wrapper {
+    height: 162px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-list {
+    overflow: hidden;   
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .item-link{
+        width: 100%;
+    }
+    
+    .item-img {
+        width: 500px;
+     }
+}
+

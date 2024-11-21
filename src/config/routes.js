@@ -3,6 +3,7 @@ const routes = {
   charge: '/charge',
   profile: '/profile',
   search: '/search',
+  login: '/login',
   shoppingcart: '/shoppingcart',
 };
 

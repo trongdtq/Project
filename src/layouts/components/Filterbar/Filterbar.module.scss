@@ -1,0 +1,24 @@
+.wrapper {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pop-tags {
+    margin-top: 24px;
+}
+
+.pop-item {
+    color: #000000a6;
+    display: inline-block;
+    height: auto;
+    padding: 0 7px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.pop-item ~  .pop-item {
+    margin-left: 16px;
+}

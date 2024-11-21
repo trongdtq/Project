@@ -1,5 +1,13 @@
+import Filterbar from '~/layouts/components/Filterbar';
+import Slider from '~/layouts/components/Slider';
+
 function Home() {
-  return <h1 style={{ height: 1000 }}>Home page</h1>;
+  return (
+    <div style={{ height: 1000 }}>
+      <Filterbar />
+      <Slider />
+    </div>
+  );
 }
 
 export default Home;

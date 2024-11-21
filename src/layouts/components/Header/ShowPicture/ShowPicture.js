@@ -112,7 +112,7 @@ function ShowPicture({ children }) {
     </div>
   );
 
-  console.log(renderPicture);
+  // console.log(renderPicture);
 
   return (
     <Tippy interactive delay={[200, 400]} offset={[0, 5]} placement="bottom-end" render={renderPicture}>

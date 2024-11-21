@@ -26,7 +26,7 @@
   
 .icon + .title,
 .title + .icon {
-    margin-left: 8px;
+    margin-left: 12px;
   }
   
 .icon {
@@ -42,6 +42,11 @@
       color: var(--green);
     }
   }
+  .square {
+    background: #f2f4f8;
+    border: 1px solid #e4e9f0;
+    border-radius: 4px;
+  }
 
 
   // Button size
@@ -54,3 +59,5 @@
     min-width: 140px;
     padding: 14px 16px;
   }
+
+  
