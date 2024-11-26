@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './Slider.module.scss';
 import Image from '~/components/Image';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -10,28 +13,89 @@ function Slider() {
   const dataImage = [
     {
       hrefImage: 'http://st5.cdn.yestone.com/thumbs/10878436/vector/67032/670323226/api_thumb_450.jpg?forcejpeg=true',
-      alt: 'Image',
+      title: 'Image',
     },
     {
       hrefImage: 'http://st5.cdn.yestone.com/thumbs/1561359/vector/68615/686155878/api_thumb_450.jpg?forcejpeg=true',
-      alt: 'Image',
+      title: 'Image',
     },
     {
       hrefImage: 'http://st5.cdn.yestone.com/thumbs/59577748/vector/65494/654944410/api_thumb_450.jpg?forcejpeg=true',
-      alt: 'Image',
+      title: 'Image',
+    },
+    {
+      hrefImage: 'http://st5.cdn.yestone.com/thumbs/1561359/vector/68615/686155878/api_thumb_450.jpg?forcejpeg=true',
+      title: 'Image',
     },
   ];
 
-  const renderItem = (data) => {
-    return data.map((item) => (
-      <Link href="#" className={cx('item-link')}>
-        <Image className={cx('item-img')} alt={item.alt} src={item.hrefImage} />
-      </Link>
-    ));
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState('next');
+
+  // Access The Images
+  const sliderImages = useRef([]);
+  const container = useRef();
+
+  const goToPrev = () => {
+    setDirection('prev');
+    setCurrentIndex(currentIndex - 1 < 0 ? dataImage.length - 1 : currentIndex - 1);
   };
+
+  const goToNext = () => {
+    setDirection('next');
+    setCurrentIndex(currentIndex + 1 >= dataImage.length ? 0 : currentIndex + 1);
+  };
+
+  useLayoutEffect(() => {
+    sliderImages.current = sliderImages.current.slice(0, dataImage.length);
+
+    if (sliderImages.current[currentIndex]) {
+      if (direction === 'prev') {
+        sliderImages.current[currentIndex].style.animation = 'prev1 .5s ease-in forwards';
+        sliderImages.current[currentIndex - 1 < 0 ? dataImage.length - 1 : currentIndex - 1].style.animation =
+          'prev2 .5s ease-in forwards';
+      } else {
+        sliderImages.current[currentIndex].style.animation = 'next1 .5s ease-in forwards';
+        sliderImages.current[currentIndex + 1 >= dataImage.length ? 0 : currentIndex + 1].style.animation =
+          'next2 .5s ease-in forwards';
+      }
+    }
+  }, [currentIndex, direction]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => goToNext(), 4000);
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
+
   return (
     <div className={cx('wrapper')}>
-      <div className={cx('slider-list')}></div>
+      <div className={cx('slider-list')} ref={(el) => (container.current = el)}>
+        {dataImage.map((item, index) => (
+          <Link
+            ref={(el) => (sliderImages.current[index] = el)}
+            key={index}
+            href="#"
+            className={cx('item-link', { active: index === currentIndex })}
+          >
+            <Image className={cx('item-img')} alt={item.title} src={item.hrefImage} />
+          </Link>
+        ))}
+      </div>
+
+      <button className={cx('prev-btn')} onClick={goToPrev}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+      <button className={cx('next-btn')} onClick={goToNext}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
+
+      <div className={cx('slider-dots')}>
+        {dataImage.map((item, index) => (
+          <div key={index} attr={index} className={cx('dot', { active: index === currentIndex })}>
+            <Image className={cx('dot-img')} alt={item.title} src={item.hrefImage} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -85,6 +85,7 @@ function Header() {
               <div className={cx('user-avatar')}>
                 <Image
                   src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-giso/c9b27b91966166745b39845b8424fb26~c5_100x100.jpeg?lk3s=a5d48078&nonce=50556&refresh_token=0cb4f6f3d0286bbb2efd80439dd78f63&x-expires=1731416400&x-signature=8Muv7HY0A0SG4jmA1hSiaXte44U%3D&shp=a5d48078&shcp=81f88b70"
+                  fallback={images.noImae}
                   className={cx('img-avatar')}
                   alt="user name"
                 />

@@ -1,22 +1,126 @@
 .wrapper {
-    height: 162px;
+    width: 100%;
+    height: 488px;
+    margin-bottom: 60px;
+    position: relative;
     display: flex;
-    justify-content: center;
 }
 
 .slider-list {
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease;
     overflow: hidden;   
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 
     .item-link{
+        height: 100%;
         width: 100%;
+        padding: 0px 15px;
+        transition: transform 2s ease-in;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:not(.active) {
+            transform: translateX(-100%);
+        }
     }
     
     .item-img {
-        width: 500px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
      }
 }
 
+// Button
+.prev-btn,
+.next-btn {
+    font-size: 3.2rem;
+    padding: 4px 12px;
+    border: 6px solid currentColor;
+    border-radius: 50%;
+    color: #666;
+    background: transparent;
+    opacity: 0.3;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.prev-btn {
+    left: 2%;
+}
+
+.next-btn {
+    right: 2%;
+}
+
+// Animation
+@keyframes next1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes next2 {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes prev1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes prev2 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+// Dost
+.slider-dots {
+
+    position: absolute;
+    bottom: -12%;
+    left: 15px;
+    display: flex;
+
+    .dot {
+        height: 55px;
+        margin-right: 2px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+
+        &:not(.active) {
+            box-shadow: none;
+            filter: grayscale(100%);
+        }
+    }
+
+    .dot-img {
+        height: 100%;
+        width: 150px;
+    }
+}

@@ -32,7 +32,7 @@ function Button({
     Comp = Link;
   } else if (href) {
     props.href = href;
-    Comp = href;
+    Comp = 'a';
   }
 
   // remove event listemer when Button ís disable
