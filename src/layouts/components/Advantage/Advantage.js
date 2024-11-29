@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 
 import styles from './Advantage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { faFile, faFileLines, faMoneyBill1, faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import { faMobileScreen, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +12,7 @@ function Advantage() {
     <div className={cx('wrapper')}>
       <div className={cx('item')}>
         <i className={cx('icon')}>
-          <FontAwesomeIcon icon={faFile} />
+          <FontAwesomeIcon icon={faFileLines} />
         </i>
 
         <h4 className={cx('title')}>Genuine commercial authorization</h4>
@@ -21,7 +22,7 @@ function Advantage() {
 
       <div className={cx('item')}>
         <i className={cx('icon')}>
-          <FontAwesomeIcon icon={faFile} />
+          <FontAwesomeIcon icon={faNewspaper} />
         </i>
 
         <h4 className={cx('title')}>Provide authorization letter and invoice</h4>
@@ -31,7 +32,7 @@ function Advantage() {
 
       <div className={cx('item')}>
         <i className={cx('icon')}>
-          <FontAwesomeIcon icon={faFile} />
+          <FontAwesomeIcon icon={faMoneyBill1} />
         </i>
 
         <h4 className={cx('title')}>Low price</h4>
@@ -41,7 +42,7 @@ function Advantage() {
 
       <div className={cx('item')}>
         <i className={cx('icon')}>
-          <FontAwesomeIcon icon={faFile} />
+          <FontAwesomeIcon icon={faMobileScreen} />
         </i>
 
         <h4 className={cx('title')}>Flexible payment</h4>

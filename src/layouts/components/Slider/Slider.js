@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Slider.module.scss';
 import Image from '~/components/Image';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -34,47 +34,52 @@ function Slider() {
 
   // Access The Images
   const sliderImages = useRef([]);
-  const container = useRef();
+  const dots = useRef([]);
 
-  const goToPrev = () => {
-    setDirection('prev');
-    setCurrentIndex(currentIndex - 1 < 0 ? dataImage.length - 1 : currentIndex - 1);
-  };
-
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setDirection('next');
-    setCurrentIndex(currentIndex + 1 >= dataImage.length ? 0 : currentIndex + 1);
-  };
+    setCurrentIndex((prevIndex) => (prevIndex + 1 >= dataImage.length ? 0 : prevIndex + 1));
+  }, [dataImage.length]);
 
+  const goToPrev = useCallback(() => {
+    setDirection('prev');
+    setCurrentIndex((prevIndex) => (prevIndex - 1 < 0 ? dataImage.length - 1 : prevIndex - 1));
+  }, [dataImage.length]);
+
+  // Handles animations when changing photos
   useLayoutEffect(() => {
     sliderImages.current = sliderImages.current.slice(0, dataImage.length);
-
+    console.log(currentIndex);
     if (sliderImages.current[currentIndex]) {
       if (direction === 'prev') {
-        sliderImages.current[currentIndex].style.animation = 'prev1 .5s ease-in forwards';
-        sliderImages.current[currentIndex - 1 < 0 ? dataImage.length - 1 : currentIndex - 1].style.animation =
-          'prev2 .5s ease-in forwards';
+        sliderImages.current[
+          currentIndex + 1 >= dataImage.length ? 0 : currentIndex + 1
+        ].style.animation = `${styles.prev1} .5s ease-in forwards`;
+
+        sliderImages.current[currentIndex].style.animation = `${styles.prev2} .5s ease-in forwards`;
       } else {
-        sliderImages.current[currentIndex].style.animation = 'next1 .5s ease-in forwards';
-        sliderImages.current[currentIndex + 1 >= dataImage.length ? 0 : currentIndex + 1].style.animation =
-          'next2 .5s ease-in forwards';
+        sliderImages.current[
+          currentIndex - 1 < 0 ? dataImage.length - 1 : currentIndex - 1
+        ].style.animation = `${styles.next1} .5s ease-in forwards`;
+
+        sliderImages.current[currentIndex].style.animation = `${styles.next2} .5s ease-in forwards`;
       }
     }
-  }, [currentIndex, direction]);
+  }, [dataImage.length, currentIndex, direction]);
 
   useEffect(() => {
     const intervalId = setInterval(() => goToNext(), 4000);
     return () => clearInterval(intervalId);
-  }, [currentIndex]);
+  }, [currentIndex, goToNext]);
 
   return (
     <div className={cx('wrapper')}>
-      <div className={cx('slider-list')} ref={(el) => (container.current = el)}>
+      <div className={cx('slider-list')}>
         {dataImage.map((item, index) => (
           <Link
             ref={(el) => (sliderImages.current[index] = el)}
             key={index}
-            href="#"
+            to="#"
             className={cx('item-link', { active: index === currentIndex })}
           >
             <Image className={cx('item-img')} alt={item.title} src={item.hrefImage} />
@@ -91,7 +96,13 @@ function Slider() {
 
       <div className={cx('slider-dots')}>
         {dataImage.map((item, index) => (
-          <div key={index} attr={index} className={cx('dot', { active: index === currentIndex })}>
+          <div
+            key={index}
+            attr={index}
+            ref={(el) => (dots.current[index] = el)}
+            className={cx('dot', { active: index === currentIndex })}
+            // className={cx('dot')}
+          >
             <Image className={cx('dot-img')} alt={item.title} src={item.hrefImage} />
           </div>
         ))}

@@ -9,7 +9,6 @@
 .slider-list {
     height: 100%;
     width: 100%;
-    transition: transform 0.5s ease;
     overflow: hidden;   
     position: relative;
 
@@ -17,7 +16,6 @@
         height: 100%;
         width: 100%;
         padding: 0px 15px;
-        transition: transform 2s ease-in;
         position: absolute;
         top: 0;
         left: 0;

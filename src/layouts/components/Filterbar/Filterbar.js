@@ -13,13 +13,13 @@ function Filterbar() {
       <Search />
 
       <div className={cx('pop-tags')}>
-        <Button className={cx('pop-item')} square>
+        <Button href="#" className={cx('pop-item')} square>
           Oriental characters
         </Button>
-        <Button className={cx('pop-item')} square>
+        <Button href="#" className={cx('pop-item')} square>
           illustration
         </Button>
-        <Button className={cx('pop-item')} square>
+        <Button href="#" className={cx('pop-item')} square>
           Visual inspiration
         </Button>
       </div>

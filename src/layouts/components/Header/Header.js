@@ -1,5 +1,12 @@
 import classNames from 'classnames/bind';
-import { faDollarSign } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBell,
+  faClockRotateLeft,
+  faDollarSign,
+  faGear,
+  faLandmark,
+  faRightToBracket,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
@@ -12,12 +19,12 @@ import styles from './Header.module.scss';
 import ShowPicture from './ShowPicture';
 import Image from '~/components/Image';
 import Menu from '~/components/Menu';
-import { faAddressCard, faCreditCard, faMoneyBill1, faStar } from '@fortawesome/free-regular-svg-icons';
+import { faAddressCard, faCreditCard, faStar } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
 function Header() {
-  const currentUser = true;
+  const currentUser = false;
 
   const MENU_ITEMS = [
     {
@@ -36,15 +43,30 @@ function Header() {
       to: './recharge',
     },
     {
-      icon: <FontAwesomeIcon icon={faMoneyBill1} />,
-      title: 'Request Invoice',
+      icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
+      title: 'Purchase History',
       to: './request',
     },
     {
-      icon: '',
-      title: 'Logout',
+      icon: <FontAwesomeIcon icon={faLandmark} />,
+      title: 'Business Functions',
       to: './logout',
       separate: true, // hiển thị vạch
+    },
+    {
+      icon: <FontAwesomeIcon icon={faBell} />,
+      title: 'Notification Center',
+      to: './notify',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faGear} />,
+      title: 'Account Settings',
+      to: './profile',
+    },
+    {
+      icon: <FontAwesomeIcon icon={faRightToBracket} />,
+      title: 'Logout',
+      to: './logout',
     },
   ];
 

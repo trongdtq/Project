@@ -12,11 +12,12 @@
 
 .pop-item {
     color: #000000a6;
-    display: inline-block;
     height: auto;
     padding: 0 7px;
-    font-size: 1.2rem;
     line-height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    display: inline-block;
 }
 
 .pop-item ~  .pop-item {

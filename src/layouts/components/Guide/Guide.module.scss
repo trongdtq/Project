@@ -29,8 +29,8 @@
     .category-item {
         min-width: 100px;
         height: 36px;
-        font-size: 1,4rem;
-        line-height: 3,4rem;
+        font-size: 1.4rem;
+        line-height: 3.4rem;
         margin: 5px;
         color: #000000a6;
         background-color: var(--white);
@@ -99,10 +99,11 @@
         margin-top: -6px;
         height: 58px;
         padding: 16px;
+        color: var(--black);
+        background-color: var(--white);
         display: flex;
         align-items: center;
         justify-content: center;       
-        background-color: var(--white);
     }
 
     &:hover {

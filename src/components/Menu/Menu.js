@@ -23,7 +23,7 @@ function Menu({ children, items = [], onChange = defaultFnc }) {
 
   return (
     <div>
-      <Tippy interactive offset={[-85, 15]} placement="bottom" render={renderMenu}>
+      <Tippy interactive offset={[-80, 15]} placement="bottom" render={renderMenu}>
         {children}
       </Tippy>
     </div>
