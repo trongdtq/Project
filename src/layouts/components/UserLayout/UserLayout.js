@@ -7,6 +7,7 @@ import 'tippy.js/dist/tippy.css';
 import styles from './UserLayout.module.scss';
 import Image from '~/components/Image';
 import Button from '~/components/Button';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +32,7 @@ function UserLayout() {
         {/* style hover buttons */}
         <Tippy hideOnClick={false} content="Message" placement="bottom">
           <div className={cx('message')}>
-            <Button className={cx('btn')}>
+            <Button to={config.routes.messages} className={cx('btn')}>
               <FontAwesomeIcon icon={faComments} />
             </Button>
           </div>
@@ -39,7 +40,7 @@ function UserLayout() {
 
         <Tippy hideOnClick={false} content="Edit Profile" placement="bottom">
           <div className={cx('edit')}>
-            <Button className={cx('btn')}>
+            <Button to={config.routes.settings} className={cx('btn')}>
               <FontAwesomeIcon icon={faPen} />
             </Button>
           </div>
@@ -152,7 +153,12 @@ function UserLayout() {
         </div>
 
         <div className={cx('upload-media')}>
-          <Button className={cx('btn-upload')} primary leftIcon={<FontAwesomeIcon icon={faArrowUpFromBracket} />}>
+          <Button
+            to={config.routes.upload}
+            className={cx('btn-upload')}
+            primary
+            leftIcon={<FontAwesomeIcon icon={faArrowUpFromBracket} />}
+          >
             Upload
           </Button>
         </div>

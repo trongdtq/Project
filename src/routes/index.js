@@ -18,6 +18,7 @@ import MyMedia from '~/layouts/components/ProfileForm/pages/MyMedia';
 import Following from '~/layouts/components/ProfileForm/pages/Following';
 import Messages from '~/layouts/components/ProfileForm/pages/Messages';
 import Statistics from '~/layouts/components/ProfileForm/pages/Statistics';
+import Upload from '~/pages/Upload';
 
 // Pucblic Routes
 const publicRoutes = [
@@ -28,6 +29,7 @@ const publicRoutes = [
   { path: config.routes.search, component: Search },
   { path: config.routes.productDetail, component: ProductDetail },
   { path: config.routes.user, component: User },
+  { path: config.routes.upload, component: Upload },
   { path: config.routes.profile, component: Profile, layout: ProfileLayout },
   { path: config.routes.settings, component: Settings },
   { path: config.routes.myMedia, component: MyMedia },

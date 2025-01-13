@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import {
+  faArrowUpFromBracket,
   faBell,
   faClockRotateLeft,
   faDollarSign,
@@ -38,9 +39,9 @@ function Header() {
       to: '/collection',
     },
     {
-      icon: <FontAwesomeIcon icon={faCreditCard} />,
-      title: 'Recharge Record',
-      to: '/recharge',
+      icon: <FontAwesomeIcon icon={faArrowUpFromBracket} />,
+      title: 'Upload',
+      to: '/upload',
     },
     {
       icon: <FontAwesomeIcon icon={faClockRotateLeft} />,

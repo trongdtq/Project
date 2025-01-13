@@ -54,7 +54,7 @@ function MediaItem({ data, className }) {
       <Link to={`${config.routes.productDetail}?id=${encodeURIComponent(data.id)}?type=${data.type}|videos`}>
         <video
           ref={videoRef}
-          // muted
+          muted
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           className={cx('item-img')}
