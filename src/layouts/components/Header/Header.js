@@ -24,66 +24,63 @@ import { faAddressCard, faCreditCard, faStar } from '@fortawesome/free-regular-s
 const cx = classNames.bind(styles);
 
 function Header() {
-  const currentUser = false;
+  const currentUser = true;
 
   const MENU_ITEMS = [
     {
       icon: <FontAwesomeIcon icon={faAddressCard} />,
       title: 'My Account ',
-      to: './account',
+      to: '/user',
     },
     {
       icon: <FontAwesomeIcon icon={faStar} />,
       title: 'Images Collection',
-      to: './collection',
+      to: '/collection',
     },
     {
       icon: <FontAwesomeIcon icon={faCreditCard} />,
       title: 'Recharge Record',
-      to: './recharge',
+      to: '/recharge',
     },
     {
       icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
       title: 'Purchase History',
-      to: './request',
+      to: '/request',
     },
     {
       icon: <FontAwesomeIcon icon={faLandmark} />,
       title: 'Business Functions',
-      to: './logout',
+      to: '/logout',
       separate: true, // hiển thị vạch
     },
     {
       icon: <FontAwesomeIcon icon={faBell} />,
       title: 'Notification Center',
-      to: './notify',
+      to: '/notify',
     },
     {
       icon: <FontAwesomeIcon icon={faGear} />,
       title: 'Account Settings',
-      to: './profile',
+      to: '/profile/settings',
     },
     {
       icon: <FontAwesomeIcon icon={faRightToBracket} />,
       title: 'Logout',
-      to: './logout',
+      to: '/',
     },
   ];
 
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        {/* logo */}
         <Link to={config.routes.home} className={cx('logo-link')}>
           <img className={cx('logoFeli')} src={images.longlogo} alt="LogoFeli" />
         </Link>
 
-        {/* Picture */}
         <ShowPicture>
           <span className={cx('menu-picture')}>Picture</span>
         </ShowPicture>
 
-        {/* Actions */}
         <div className={cx('actions')}>
           <Button text to={config.routes.charge} className={cx('price')}>
             <span style={{ marginLeft: -8 }}>
@@ -92,11 +89,10 @@ function Header() {
             Price
           </Button>
 
-          <Tippy content="For visual customer service, please add account!!!" placement="bottom">
+          <Tippy hideOnClick={false} content="For visual customer service, please add account!!!" placement="bottom">
             <span className={cx('customer-service')}>Online customer service</span>
           </Tippy>
 
-          {/* shopping cart */}
           <Button text className={cx('cart')} to={config.routes.shoppingcart}>
             Cart
           </Button>
@@ -114,16 +110,10 @@ function Header() {
               </div>
             </Menu>
           ) : (
-            <>
-              {/* Login use Link tab*/}
-              <Button to={config.routes.login} text className={cx('login-btn')}>
-                Login/Register
-              </Button>
-
-              {/* Menu , avatar */}
-            </>
+            <Button to={config.routes.login} text className={cx('login-btn')}>
+              Login/Register
+            </Button>
           )}
-          {/* <Menu></Menu> */}
         </div>
       </div>
     </header>

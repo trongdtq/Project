@@ -1,5 +1,11 @@
+import LoginForm from '~/layouts/components/LoginForm';
+
 function Login() {
-  return <h1>Login</h1>;
+  return (
+    <div>
+      <LoginForm />
+    </div>
+  );
 }
 
 export default Login;

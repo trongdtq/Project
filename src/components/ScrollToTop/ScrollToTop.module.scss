@@ -1,0 +1,29 @@
+.scrollToTop {
+  position: fixed;
+  bottom: 0;
+  right: 32px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.4s ease;
+  z-index: 6;
+  display: none;
+}
+
+.scrollToTop.show {
+  transform: translateY(-68px);
+  opacity: 1;
+  display: block;
+}
+
+.btn-scrollToTop {
+  width: 42px;
+  height: 42px;
+  font-size: 2rem;
+  color: #fff;
+  background-color: rgba(25, 27, 38, 0.48);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

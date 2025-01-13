@@ -1,51 +1,106 @@
 .search {
-    --search-height: 40px;
-    --search-button-width: 50px;
+  --search-height: 40px;
+  --search-button-width: 50px;
 
-    width: 700px;
-    height: var(--search-height);
-    padding-left: 16px;
-    border-radius: 4px;
-    background: var(--white);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .16);
-    display: flex;
+  width: 700px;
+  height: var(--search-height);
+  //   padding-left: 16px;
+  border-radius: 4px;
+  background: var(--white);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+}
+
+.selection-media {
+  padding: 0 16px;
+  line-height: 40px;
+}
+
+.menu-list {
+}
+
+.menu-popper {
+}
+
+.menu-content {
+  width: 120px;
+
+  .item {
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .btn-item {
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 8px 16px;
+    background-color: var(--white);
+    transition: all 0.2s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  }
+
+  .active {
+    background: hsla(149, 65%, 49%, 0.2);
+  }
+
+  .btn-item:hover {
+    background: hsla(149, 65%, 49%, 0.2);
+  }
+}
+
+.btn-selection {
+  width: 90px;
+  font-size: 1.4rem;
+  color: var(--text-color);
+  background-color: var(--white);
+  cursor: pointer;
+  display: flex;
+
+  .selection-title {
+    width: 100%;
+  }
+
+  .selection-icon {
+    text-align: right;
+    margin-left: 6px;
+  }
 }
 
 input {
-    font-size: 1.6rem;
-    background: transparent;
-    flex: 1;
+  font-size: 1.6rem;
+  background: transparent;
+  flex: 1;
 }
 
 .clear-btn {
-    font-size: 1.3rem;
-    padding: 10px 12px;
+  font-size: 1.3rem;
+  padding: 10px 12px;
 }
 
 .clear-btn,
 .search-btn {
-    color: #00000073;
-    background: transparent;
-    cursor: pointer;
+  color: #00000073;
+  background: transparent;
+  cursor: pointer;
 
-    &:hover {
-        color: inherit;
-    }
+  &:hover {
+    color: inherit;
+  }
 }
 
 .search-btn {
-    position: relative;
-    width: var(--search-button-width);
-    font-size: 2.4rem;
-    padding: 8px 14px;
+  position: relative;
+  width: var(--search-button-width);
+  font-size: 2.4rem;
+  padding: 8px 14px;
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 15%;
-        right: var(--search-button-width);
-        width: 1px;
-        height: calc(var(--search-height) - 30%);
-        background-color: rgba(22, 24, 35, 0.12);
-      }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: var(--search-button-width);
+    width: 1px;
+    height: calc(var(--search-height) - 30%);
+    background-color: rgba(22, 24, 35, 0.12);
+  }
 }

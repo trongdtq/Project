@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Image from '~/components/Image';
 import styles from './Poster.module.scss';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -11,7 +12,10 @@ function Poster() {
     <div className={cx('wrapper')}>
       <div className={cx('poster')}>
         <div className={cx('item')} style={{ width: 50 + '%', height: 560 }}>
-          <Link href="#" className={cx('item-link')}>
+          <Link
+            to={`${config.routes.search}?query=${encodeURIComponent('Visual Inspiration')}?type=all`}
+            className={cx('item-link')}
+          >
             <Image
               className={cx('img')}
               alt={'poster'}
@@ -24,7 +28,10 @@ function Poster() {
         </div>
 
         <div className={cx('item')} style={{ height: 280 }}>
-          <Link href="#" className={cx('item-link')}>
+          <Link
+            to={`${config.routes.search}?query=${encodeURIComponent('Oriental Character')}?type=all`}
+            className={cx('item-link')}
+          >
             <Image
               className={cx('img')}
               alt={'poster'}
@@ -37,7 +44,10 @@ function Poster() {
         </div>
 
         <div className={cx('item')} style={{ height: 280 }}>
-          <Link href="#" className={cx('item-link')}>
+          <Link
+            to={`${config.routes.search}?query=${encodeURIComponent('Image Coupon')}?type=all`}
+            className={cx('item-link')}
+          >
             <Image
               className={cx('img')}
               alt={'poster'}
@@ -50,7 +60,10 @@ function Poster() {
         </div>
 
         <div className={cx('item')} style={{ width: 50 + '%', height: 280 }}>
-          <Link href="#" className={cx('item-link')}>
+          <Link
+            to={`${config.routes.search}?query=${encodeURIComponent('Tourism Industry Gallery')}?type=all`}
+            className={cx('item-link')}
+          >
             <Image
               className={cx('img')}
               alt={'poster'}

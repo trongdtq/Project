@@ -1,9 +1,18 @@
 const routes = {
   home: '/',
   charge: '/charge',
-  profile: '/profile',
+  user: '/user',
   search: '/search',
   login: '/login',
+  profile: '/profile',
+  settings: '/profile/settings',
+  myMedia: '/profile/myMedia',
+  following: '/profile/following',
+  library: '/profile/library',
+  statistics: '/profile/statistics',
+  messages: '/profile/messages',
+  signUp: '/signUp',
+  productDetail: '/productDetail',
   shoppingcart: '/shoppingcart',
 };
 

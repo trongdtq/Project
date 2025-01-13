@@ -1,0 +1,289 @@
+.wrapper {
+}
+
+.container {
+  width: 100%;
+  min-height: 780px;
+  background-repeat: no-repeat;
+}
+
+.content {
+  height: 780px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+
+  .title {
+    margin: auto;
+    width: 1000px;
+    color: var(--white);
+  }
+}
+
+.main-content {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+
+  .package-item {
+    width: 40%;
+    padding: 0 12px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .head {
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 2px 2px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .head-title {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 16px 0;
+  }
+
+  .body {
+    padding: 24px;
+  }
+
+  .desc {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-bottom: 16px;
+    text-align: center;
+  }
+}
+
+.price-list {
+  font-size: 1.6rem;
+
+  .price-item {
+    height: 62px;
+    padding-left: 10px;
+    border-top: 1px solid #e8e8e8;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .item-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item-btn {
+    // làm handle btn date
+    // color: var(--white);
+    // background-color: var(--green);
+    color: var(--text-color);
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 20px;
+  }
+
+  .item-radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radio {
+    width: 18px;
+    height: 18px;
+  }
+
+  .radio-content {
+    width: 100%;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sale {
+    color: #ff0000;
+  }
+
+  .original-price {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: line-through;
+  }
+
+  .item-number {
+    font-size: 1.6rem;
+  }
+}
+
+.category {
+  border-top: 1px solid #e8e8e8;
+  border-radius: 2px 2px 0 0;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .category-number {
+    margin-left: 35px;
+  }
+
+  .category-btn {
+    margin: 10px 0;
+  }
+
+  .btn {
+    padding: 4px 15px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    background-color: var(--green);
+  }
+
+  .btn:hover {
+    background-color: #50d98e;
+  }
+}
+
+.subscribe {
+  border-top: 1px solid #e8e8e8;
+  border-radius: 2px 2px 0 0;
+
+  .subscribe-btn {
+    margin-top: 24px;
+    color: var(--white);
+    background-color: var(--green);
+  }
+
+  .subscribe-btn:hover {
+    background-color: #50d98e;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+}
+
+.offers-info {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 30px 0 20px;
+  color: var(--white);
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+
+  p {
+    width: 1000px;
+  }
+}
+
+// Question
+.question {
+  padding: 30px 0;
+  text-align: center;
+  background-color: var(--black);
+
+  .question-container {
+    width: 1200px;
+    padding: 0 36px 24px 36px;
+    margin: 0 auto;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .question-title {
+    color: var(--white);
+    font-size: 6.4rem;
+    font-weight: 500;
+    padding: 32px 0;
+    text-align: left;
+  }
+
+  .questions-list {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .item-question {
+    padding: 14px 0;
+    border-bottom: 1px solid #e4e9f0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .item-question:hover .item-paragraph-active {
+    display: block;
+  }
+
+  .item-question:hover .item-icon {
+    transform: rotatez(90deg);
+  }
+
+  .item-icon {
+    padding: 10px 12px;
+    font-size: 1.2rem;
+    transition: all 0.4s;
+    position: absolute;
+    left: 0;
+    top: 7px;
+  }
+
+  .paragraph-wrapper {
+    padding: 0 38px;
+  }
+
+  .item-paragraph {
+    text-align: left;
+    display: block;
+    width: 100%;
+  }
+
+  .item-paragraph-active {
+    width: 100%;
+    line-height: 1.8;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-align: left;
+    margin-top: 12px;
+    display: none;
+  }
+
+  .help-customers {
+    font-size: 1.6rem;
+    color: var(--white);
+    text-align: left;
+  }
+
+  .help-text {
+    width: 100%;
+    display: block;
+  }
+
+  .customer-link {
+    color: rgb(62, 166, 255);
+    cursor: pointer;
+  }
+}

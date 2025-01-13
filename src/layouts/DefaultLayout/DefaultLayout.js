@@ -7,6 +7,7 @@ import styles from './DefaultLayout.module.scss';
 const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
     <div className={cx('wrapper')}>
       <Header />

@@ -9,8 +9,10 @@ const cx = classNames.bind(styles);
 function Button({
   to,
   href,
+  primary = false,
   text = false,
   square = false,
+  outline = false,
   disable = false,
   small = false,
   large = false,
@@ -45,8 +47,10 @@ function Button({
   }
 
   const classes = cx('wrapper', {
+    primary,
     text,
     square,
+    outline,
     disable,
     [className]: className,
     small,
@@ -66,8 +70,10 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
   href: PropTypes.string,
+  primary: PropTypes.bool,
   text: PropTypes.bool,
   square: PropTypes.bool,
+  outline: PropTypes.bool,
   disable: PropTypes.bool,
   className: PropTypes.string,
   leftIcon: PropTypes.node,

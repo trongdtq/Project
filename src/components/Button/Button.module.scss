@@ -1,63 +1,78 @@
 .wrapper {
-    font-size: 1.6rem;
-    font-weight: 500;
-    font-family: var(--font-family);
-  
-    min-width: 110px;
-    padding: 9px 12px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    background-color: var(--white);
-    cursor: pointer;
-    user-select: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  
-    + .wrapper {
-      margin-left: 8px;
-    }
-  
-    &.disable {
-      pointer-events: none;
-      opacity: 0.5;
-    }
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+
+  min-width: 110px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: var(--white);
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  + .wrapper {
+    margin-left: 8px;
+  }
+
+  &.disable {
+    pointer-events: none;
+    opacity: 0.3;
+  }
 }
-  
+
 .icon + .title,
 .title + .icon {
-    margin-left: 12px;
-  }
-  
-.icon {
-    width: 24px;
-    text-align: center;                                                                                                                                                                                                                                                                                                                                                                                                                                     
-    display: inline-block;
-  }
+  margin-left: 4px;
+}
 
+.icon {
+  width: 24px;
+  text-align: center;
+  // display: inline-block;
+  display: flex;
+  align-items: center;
+}
 
 //   Button Styles
+.primary {
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 20px;
+
+  &:hover {
+    background-color: #50d98e;
+  }
+}
+
 .text {
-    &:hover {
-      color: var(--green);
-    }
+  min-width: none;
+  &:hover {
+    color: var(--green);
   }
-  .square {
-    background: #f2f4f8;
-    border: 1px solid #e4e9f0;
-    border-radius: 4px;
-  }
+}
 
+.square {
+  background: #f2f4f8;
+  border: 1px solid #e4e9f0;
+  border-radius: 4px;
+}
 
-  // Button size
+.outline {
+  border: 1px solid var(--black);
+  border-radius: 8px;
+}
+
+// Button size
 .small {
-    width: 88px;
-    padding: 4px 16px;
-  }
-  
-.large {
-    min-width: 140px;
-    padding: 14px 16px;
-  }
+  width: 88px;
+  padding: 4px 16px;
+}
 
-  
+.large {
+  min-width: 140px;
+  padding: 14px 16px;
+}

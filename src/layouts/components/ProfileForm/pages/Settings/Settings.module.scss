@@ -1,0 +1,401 @@
+.wrapper {
+  overflow: hidden;
+}
+
+.container {
+  padding: 40px 26px 0 26px;
+  display: flex;
+  gap: 66px;
+}
+
+.nav-settings {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile {
+  height: 64px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .avatar-profile {
+    height: 100%;
+  }
+
+  .img-avatar {
+    width: 64px;
+    border-radius: 50%;
+  }
+
+  .username-profile {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+}
+
+.menu-profile {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+
+  .btn-menu {
+    color: var(--text-color);
+    background-color: transparent;
+    margin: 0;
+    border-color: transparent;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    display: flex;
+    justify-content: left;
+  }
+
+  .btn-menu:hover {
+    background-color: #f7f7f7;
+  }
+
+  .btn-menu.active {
+    color: var(--black);
+    background-color: #f7f7f7;
+  }
+}
+
+.content {
+  width: 100%;
+}
+
+// Profile settings
+
+.profile-settings {
+  margin-bottom: 48px;
+
+  .head-profile {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 2px;
+  }
+
+  .subtitle-profile {
+    font-size: 1.5rem;
+  }
+}
+
+.profile-settings .container-table {
+  .title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 2px 0 24px 0;
+  }
+
+  .base-container {
+    margin-top: 24px;
+  }
+
+  .inner-content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .base-item {
+    flex: 1;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .desc-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-left: 4px;
+  }
+
+  .text-input {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    position: relative;
+  }
+
+  .icon-input {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translatey(-50%);
+  }
+
+  .input-styles {
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 12px 12px 12px 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(25, 27, 38, 0.24);
+    outline: none;
+    transition: border 0.2s ease;
+  }
+
+  .input-styles:focus {
+    border-color: #191b26;
+  }
+
+  .input-styles::placeholder {
+    opacity: 0.4;
+  }
+
+  .icon-input .input-styles::placeholder {
+  }
+
+  .input-styles-about {
+    resize: vertical;
+    height: 114px;
+    min-height: 46px;
+    max-height: 210px;
+  }
+
+  .input-styles-about::placeholder {
+    vertical-align: top;
+    line-height: 16px;
+    font-size: 1.6rem;
+    font-family: var(--font-family);
+  }
+
+  & hr {
+    border-color: rgba(25, 27, 38, 0.08);
+    border-top: 0 rgba(25, 27, 38, 0.08);
+    border-style: solid;
+    margin: 64px 0;
+  }
+}
+
+.button-secondary {
+  .btn {
+    border-radius: 20px;
+    border-color: rgba(25, 27, 38, 0.24);
+  }
+
+  .btn:hover {
+    border-color: var(--black);
+  }
+}
+
+.button-save {
+  text-align: center;
+  margin-top: 64px;
+}
+
+// Account settings
+
+.account-settings {
+  margin-bottom: 48px;
+}
+
+.content-account .container-table {
+  .title {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .title .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 2px 0 24px 0;
+  }
+
+  & hr {
+    border-color: rgba(25, 27, 38, 0.08);
+    border-top: 0 rgba(25, 27, 38, 0.08);
+    border-style: solid;
+    margin: 64px 0;
+  }
+}
+
+.content-account .table {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  .base-container {
+    width: 48%;
+    border: 1px solid rgba(25, 27, 38, 0.08);
+    border-left: none;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .ai-training {
+    width: 100%;
+  }
+
+  .stripe-container {
+    width: 100%;
+    padding: 28px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .table-sign-in {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text,
+  .table-sign-in .label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+
+  .table-sign-in .buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons .btn {
+    color: var(--text-color);
+    border-radius: 20px;
+  }
+
+  .buttons .btn:hover {
+    background: #f7f7f7;
+  }
+
+  .buttons .btn.active {
+    color: var(--black);
+    background: #f7f7f7;
+  }
+
+  .icon-check {
+    width: 14px;
+    color: var(--green);
+    margin-right: 8px;
+  }
+
+  .icon-close {
+    width: 14px;
+    color: #d86560;
+    margin-right: 8px;
+    display: none;
+  }
+
+  .btn:hover .icon-check {
+    display: none;
+  }
+
+  .btn:hover .icon-close {
+    display: inline-block;
+  }
+
+  .btn-set-password {
+    border-radius: 20px;
+    border: 1px solid #ceced2;
+  }
+
+  .btn-set-password:hover {
+    color: var(--black);
+    border-color: var(--black);
+  }
+
+  .btn-deactivate {
+    color: var(--white);
+    background-color: #d86560;
+    border-radius: 20px;
+  }
+
+  .btn-deactivate:hover {
+    background: #dd7773;
+  }
+
+  .description {
+    display: flex;
+    align-items: center;
+  }
+
+  .description .description-icon {
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .description .icon-brands {
+    width: 40px;
+  }
+
+  .desc-text {
+    min-height: 32px;
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+  }
+
+  .switch .btn-switch {
+    width: 40px;
+    height: 24px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: none;
+    padding: 0 2px;
+    background-color: rgba(25, 27, 38, 0.16);
+    transition: background-color 0.2s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .switch .slide {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .switch .dot {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    background-clip: content-box;
+    border-radius: 100%;
+    box-sizing: content-box;
+    box-shadow: 0 2px 4px -1px rgba(25, 27, 38, 0.24);
+    transition: transform 0.2s;
+    position: absolute;
+    left: 0;
+    display: block;
+  }
+
+  .btn-switch.active {
+    background-color: var(--green);
+  }
+
+  .active .dot {
+    left: calc(100% - 21px);
+  }
+}

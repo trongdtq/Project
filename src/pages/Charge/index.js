@@ -1,5 +1,13 @@
+import ChargeForm from '~/layouts/components/ChargeForm';
+import Footer from '~/layouts/components/Footer';
+
 function Charge() {
-  return <h1>Charge</h1>;
+  return (
+    <div>
+      <ChargeForm />
+      <Footer />
+    </div>
+  );
 }
 
 export default Charge;

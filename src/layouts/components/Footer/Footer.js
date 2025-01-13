@@ -76,11 +76,11 @@ function Footer() {
         </div>
 
         <div className={cx('copyright')}>
-          <Link className={cx('text')} href="#">
+          <Link className={cx('text')} to="/">
             FeLi.com
           </Link>
           <span> ABC Company ABC Vietnam Network Technology ©2013-2024 All rights reserved </span>
-          <Link className={cx('text')} href="#">
+          <Link className={cx('text')} to="#">
             ICP Việt Nam
           </Link>
         </div>

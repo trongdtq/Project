@@ -8,7 +8,7 @@ import MenuItem from './MenuItem';
 const cx = classNames.bind(styles);
 const defaultFnc = () => {};
 
-function Menu({ children, items = [], onChange = defaultFnc }) {
+function Menu({ children, items = [], onChange = defaultFnc, hideOnClick = false }) {
   const renderItem = () => {
     return items.map((item, index) => <MenuItem key={index} data={item} onClick={onChange(item)} />);
   };
@@ -23,7 +23,7 @@ function Menu({ children, items = [], onChange = defaultFnc }) {
 
   return (
     <div>
-      <Tippy interactive offset={[-80, 15]} placement="bottom" render={renderMenu}>
+      <Tippy hideOnClick={hideOnClick} interactive offset={[-80, 15]} placement="bottom" render={renderMenu}>
         {children}
       </Tippy>
     </div>

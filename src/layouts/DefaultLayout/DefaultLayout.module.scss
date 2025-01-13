@@ -1,12 +1,11 @@
 .wrapper {
   margin-top: var(--default-layout-header-height);
+  // overflow-x: hidden;
+}
 
-  }
+.container {
+  width: var(--default-layout-width);
+}
 
-  .container {
-    width: var(--default-layout-width);
-  }
-  
-  .content {
-    min-height: 1000px;
-  }
+.content {
+}

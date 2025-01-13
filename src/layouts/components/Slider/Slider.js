@@ -1,31 +1,34 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-
-import styles from './Slider.module.scss';
-import Image from '~/components/Image';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './Slider.module.scss';
+import Image from '~/components/Image';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
 function Slider() {
   const dataImage = [
     {
-      hrefImage: 'http://st5.cdn.yestone.com/thumbs/10878436/vector/67032/670323226/api_thumb_450.jpg?forcejpeg=true',
-      title: 'Image',
+      hrefImage: 'https://cdn-media.sforum.vn/storage/app/media/ctv_seo10/background-tet-1.jpg',
+      title: 'Happy New Year 2025',
     },
     {
-      hrefImage: 'http://st5.cdn.yestone.com/thumbs/1561359/vector/68615/686155878/api_thumb_450.jpg?forcejpeg=true',
-      title: 'Image',
+      hrefImage:
+        'https://img3.wallspic.com/previews/0/9/4/0/7/170490/170490-snow_landscape_free-snow-landscape-nature-winter-x750.jpg',
+      title: 'Winter Color Trends 2024',
     },
     {
-      hrefImage: 'http://st5.cdn.yestone.com/thumbs/59577748/vector/65494/654944410/api_thumb_450.jpg?forcejpeg=true',
-      title: 'Image',
+      hrefImage:
+        'https://designercomvn.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2017/10/26015647/dich-vu-thiet-ke-banner-du-lich-chuyen-nghiep-tai-ha-noi4.jpg',
+      title: 'Image Of Tourism Industry',
     },
     {
-      hrefImage: 'http://st5.cdn.yestone.com/thumbs/1561359/vector/68615/686155878/api_thumb_450.jpg?forcejpeg=true',
-      title: 'Image',
+      hrefImage: 'https://ssg.vn/wp-content/uploads/2023/07/edu-banner-1.jpg.webp',
+      title: 'Image Of Education Sector',
     },
   ];
 
@@ -49,7 +52,6 @@ function Slider() {
   // Handles animations when changing photos
   useLayoutEffect(() => {
     sliderImages.current = sliderImages.current.slice(0, dataImage.length);
-    console.log(currentIndex);
     if (sliderImages.current[currentIndex]) {
       if (direction === 'prev') {
         sliderImages.current[
@@ -79,7 +81,7 @@ function Slider() {
           <Link
             ref={(el) => (sliderImages.current[index] = el)}
             key={index}
-            to="#"
+            to={`${config.routes.search}?query=${encodeURIComponent(item.title)}?type=all`}
             className={cx('item-link', { active: index === currentIndex })}
           >
             <Image className={cx('item-img')} alt={item.title} src={item.hrefImage} />
