@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faCircleQuestion, faImage } from '@fortawesome/free-regular-svg-icons';
 import Tippy from '@tippyjs/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import config from '~/config';
 import { IconMedia } from '~/components/Icons';
 

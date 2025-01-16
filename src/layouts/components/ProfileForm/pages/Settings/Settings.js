@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import styles from './Settings.module.scss';
 import Button from '~/components/Button';
@@ -30,7 +30,10 @@ function Settings() {
         <div className={cx('nav-settings')}>
           <div className={cx('user-profile')}>
             <div className={cx('avatar-profile')}>
-              <Image className={cx('img-avatar')} src="ad" />
+              <Image
+                className={cx('img-avatar')}
+                src="https://cdn.pixabay.com/photo/2024/03/05/17/53/ai-generated-8614982_1280.jpg"
+              />
             </div>
 
             <div className={cx('username-profile')}>

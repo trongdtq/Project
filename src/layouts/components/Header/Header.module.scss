@@ -1,48 +1,48 @@
 .wrapper {
-
   --default-header-horizontal-space: 13px 20px;
 
-    width: 100%;
-    background-color: var(--white);
-    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .2);
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    // display: flex; 
+  width: 100%;
+  height: var(--default-layout-header-height);
+  background-color: var(--white);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // display: flex;
+}
+
+.inner {
+  font-size: 1.6rem;
+  height: 100%;
+  width: var(--default-layout-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logoFeli {
+  width: 88px;
+}
+
+/* Picture */
+.menu-picture {
+  padding: var(--default-header-horizontal-space);
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--green);
   }
+}
 
-  .inner {
-    font-size: 1.6rem;
-    height: 100%;
-    width: var(--default-layout-width);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo-link {
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-  }
-
-  .logoFeli {
-    width: 88px
-  }
-
-  /* Picture */
-  .menu-picture {
-    padding: var(--default-header-horizontal-space);
-    font-weight: 500;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--green);
-    }
-  }
-
-  /* Actions */
+/* Actions */
 .actions {
   flex: 1;
   display: flex;
@@ -54,23 +54,23 @@
   }
 
   .customer-service {
-      padding: var(--default-header-horizontal-space);
-      font-weight: 500;
+    padding: var(--default-header-horizontal-space);
+    font-weight: 500;
   }
-  
+
   .customer-service:hover {
     color: var(--green);
     cursor: pointer;
   }
-  
+
   .cart {
-      padding: var(--default-header-horizontal-space);
+    padding: var(--default-header-horizontal-space);
   }
 }
 
 .login-btn {
-    padding: var(--default-header-horizontal-space);
-    color: var(--text-color);
+  padding: var(--default-header-horizontal-space);
+  color: var(--text-color);
 }
 
 .img-avatar {

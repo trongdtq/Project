@@ -17,7 +17,10 @@ function UserLayout() {
     <div className={cx('wrapper')}>
       <div className={cx('head-profile')}>
         <div className={cx('avatar-profile')}>
-          <Image src={'zxcvj'} className={cx('img-avatar')} />
+          <Image
+            src={'https://cdn.pixabay.com/photo/2024/03/05/17/53/ai-generated-8614982_1280.jpg'}
+            className={cx('img-avatar')}
+          />
         </div>
 
         <div className={cx('info-profile')}>
