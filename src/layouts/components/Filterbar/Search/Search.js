@@ -35,14 +35,17 @@ function Search() {
     {
       title: 'All Videos',
       type: 'all|videos',
+      disabled: true,
     },
     {
       title: 'Film',
       type: 'Film|videos',
+      disabled: true,
     },
     {
       title: 'Animation',
       type: 'animation|videos',
+      disabled: true,
     },
   ];
 
@@ -50,8 +53,8 @@ function Search() {
     return TYPES_MEDIA.map((item, index) => (
       <div key={index} className={cx('item')}>
         <button
-          // ref={(e) => (mediaRefs.current[index] = e)}
           className={cx('btn-item', { active: activeIndex === index })}
+          disabled={item.disabled}
           onClick={(e) => handleTypeMedia(e, item, index)}
         >
           {item.title}

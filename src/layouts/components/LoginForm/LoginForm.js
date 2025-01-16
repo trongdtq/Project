@@ -8,7 +8,7 @@ import styles from './LoginForm.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import config from '~/config';
-import Validator from './Validator';
+import ValidatorForm from '~/components/ValidatorForm';
 
 const cx = classNames.bind(styles);
 
@@ -17,12 +17,16 @@ function LoginForm() {
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   useEffect(() => {
-    Validator(formRef.current, {
-      onSubmit: async function (data) {
-        window.location.href = '/';
-        console.log(data);
+    ValidatorForm(
+      formRef.current,
+      {
+        onSubmit: async function (data) {
+          window.location.href = '/';
+          console.log(data);
+        },
       },
-    });
+      styles,
+    );
   }, []);
 
   const handleShowHidePassword = () => {

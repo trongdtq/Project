@@ -4,6 +4,7 @@ import Tippy from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '../Popper';
 import styles from './Menu.module.scss';
 import MenuItem from './MenuItem';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 const defaultFnc = () => {};
@@ -29,5 +30,12 @@ function Menu({ children, items = [], onChange = defaultFnc, hideOnClick = false
     </div>
   );
 }
+
+Menu.propTypes = {
+  children: PropTypes.node.isRequired,
+  items: PropTypes.array,
+  onChange: PropTypes.func,
+  hideOnClick: PropTypes.bool,
+};
 
 export default Menu;

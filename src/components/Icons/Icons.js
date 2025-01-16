@@ -1,7 +1,3 @@
-export const CompactIcon = ({ width = '1.6rem', height = '1.6rem', className }) => {
-  // <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M512 80c8.8 0 16 7.2 16 16l0 320c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16L48 96c0-8.8 7.2-16 16-16l448 0zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM208 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16l192 0c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80l-64 0zM376 144c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0z"/></svg>
-};
-
 export const IconFacebook = ({ width = '3rem', height = '3rem', className }) => (
   <svg
     width={width}
@@ -20,5 +16,101 @@ export const IconFacebook = ({ width = '3rem', height = '3rem', className }) => 
       d="M19.67109,18.46875l.53203-3.46875h-3.32812v-2.251c0-.949,.46488-1.874,1.95556-1.874h1.51319v-2.95312s-1.37326-.23438-2.68619-.23438c-2.74103,0-4.53256,1.66125-4.53256,4.66875v2.64375h-3.04688v3.46875h3.04688v8.38542c.61095,.09587,1.23713,.14583,1.875,.14583s1.26405-.04997,1.875-.14583v-8.38542h2.79609Z"
       fill="#fff"
     ></path>
+  </svg>
+);
+
+export const IconMedia = ({ width = '19.3rem', height = '8.9rem', className }) => (
+  <svg width={width} height={height} className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#media_discs_svg__filter0_d_7226_59487)" transform="rotate(15 152.192 46)">
+      <circle cx="152.192" cy="46" r="32" fill="#fff"></circle>
+      <circle cx="152.192" cy="46" r="31.5" stroke="#EBECF0"></circle>
+    </g>
+    <path
+      d="M163.46 37.998l-12.449-1.453a1.583 1.583 0 00-1.732 1.163l-2.953 11.02a4.767 4.767 0 00-2.219-.734c-2.232-.156-4.134 1.194-4.251 3.046-.117 1.852 1.581 3.47 3.813 3.626 1.999.14 3.731-.93 4.144-2.47l2.953-11.02 11.004 1.274-2.011 7.506a4.766 4.766 0 00-2.22-.734c-2.232-.157-4.133 1.194-4.25 3.046-.117 1.852 1.581 3.47 3.813 3.626 1.999.14 3.731-.93 4.144-2.47l3.598-13.428a1.599 1.599 0 00-1.384-1.998z"
+      fill="#67A871"
+    ></path>
+    <g filter="url(#media_discs_svg__filter1_d_7226_59487)">
+      <circle cx="96.191" cy="38" r="32" fill="#fff"></circle>
+      <circle cx="96.191" cy="38" r="31.5" stroke="#EBECF0"></circle>
+    </g>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M89.73 28.308h12.923a3.231 3.231 0 013.231 3.23v12.924a3.231 3.231 0 01-3.231 3.23H89.73a3.23 3.23 0 01-3.231-3.23V31.538a3.23 3.23 0 013.23-3.23zm13.384 9.771v-6.54a.461.461 0 00-.461-.462H89.73a.462.462 0 00-.462.461v12.924c0 .254.207.461.462.461h.079l9.422-9.422a.923.923 0 011.305 0l2.578 2.578zm-12.461-3.31a2.308 2.308 0 104.615 0 2.308 2.308 0 00-4.615 0z"
+      fill="#E3AB6C"
+    ></path>
+    <g filter="url(#media_discs_svg__filter2_d_7226_59487)" transform="rotate(-15 40.192 46)">
+      <circle cx="40.192" cy="46" r="32" fill="#fff"></circle>
+      <circle cx="40.192" cy="46" r="31.5" stroke="#EBECF0"></circle>
+    </g>
+    <path
+      d="M44.186 43.073l3.907-4.746a.923.923 0 011.604.348l2.389 8.916a.923.923 0 01-1.216 1.103l-5.756-2.156.73 2.726a2.77 2.77 0 01-1.958 3.391l-9.808 2.628a2.77 2.77 0 01-3.391-1.958l-2.39-8.916a2.77 2.77 0 011.959-3.392l9.808-2.628a2.77 2.77 0 013.391 1.958l.73 2.726z"
+      fill="#909CF2"
+    ></path>
+    <defs>
+      <filter
+        id="media_discs_svg__filter0_d_7226_59487"
+        x="112.184"
+        y="7.992"
+        width="80.017"
+        height="80.016"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        ></feColorMatrix>
+        <feOffset dy="2"></feOffset>
+        <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0.0980392 0 0 0 0 0.105882 0 0 0 0 0.14902 0 0 0 0.06 0"></feColorMatrix>
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_7226_59487"></feBlend>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow_7226_59487" result="shape"></feBlend>
+      </filter>
+      <filter
+        id="media_discs_svg__filter1_d_7226_59487"
+        x="56.191"
+        y="0"
+        width="80"
+        height="80"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        ></feColorMatrix>
+        <feOffset dy="2"></feOffset>
+        <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0.0980392 0 0 0 0 0.105882 0 0 0 0 0.14902 0 0 0 0.06 0"></feColorMatrix>
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_7226_59487"></feBlend>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow_7226_59487" result="shape"></feBlend>
+      </filter>
+      <filter
+        id="media_discs_svg__filter2_d_7226_59487"
+        x="0.184"
+        y="7.992"
+        width="80.017"
+        height="80.016"
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix
+          in="SourceAlpha"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        ></feColorMatrix>
+        <feOffset dy="2"></feOffset>
+        <feGaussianBlur stdDeviation="4"></feGaussianBlur>
+        <feColorMatrix values="0 0 0 0 0.0980392 0 0 0 0 0.105882 0 0 0 0 0.14902 0 0 0 0.06 0"></feColorMatrix>
+        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_7226_59487"></feBlend>
+        <feBlend in="SourceGraphic" in2="effect1_dropShadow_7226_59487" result="shape"></feBlend>
+      </filter>
+    </defs>
   </svg>
 );

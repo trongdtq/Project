@@ -9,6 +9,7 @@ import * as searchSevices from '~/services/searchService';
 import RenderSearchResult from './RenderSearchResult';
 import Button from '~/components/Button';
 import config from '~/config';
+import Loading from '~/components/Loading';
 
 const cx = classNames.bind(styles);
 
@@ -19,10 +20,10 @@ function SearchProduct() {
   const [isDisabledNext, setIsDisabledNext] = useState(false);
   const [tags, setTags] = useState([]);
   const [typeVideo, setTypeVideo] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const location = useLocation();
   // get query parameters from URL
-  // const type = new URLSearchParams(location.search).get('type');
   const getQuery = new URLSearchParams(location.search).get('query');
   let query = getQuery.split('?');
   query = query[0];
@@ -31,9 +32,6 @@ function SearchProduct() {
     setIndexPage(1);
     setIsDisabledPrev(true);
   }, [getQuery]);
-  // 1 Error product relate
-  // 2 Error of available searches
-  // 3 Error render products video
   useEffect(() => {
     let imageType;
     let typeQuery;
@@ -65,7 +63,6 @@ function SearchProduct() {
       });
       setSearchResult(result);
     };
-    // console.log('searchResult', searchResult);
     fetchApi();
     setTags([]);
   }, [getQuery, indexPage]);
@@ -106,53 +103,66 @@ function SearchProduct() {
     setIsDisabledPrev(false);
   };
 
-  return (
-    <div className={cx('wrapper')}>
-      <div className={cx('container')}>
-        <div className={cx('header')}>
-          <h2 className={cx('title')}>{`${typeVideo[0]} ${typeVideo[1]} ${query} (${searchResult.total})`}</h2>
-          <div className={cx('tags')}>
-            {tags.map((item, index) => (
-              <Button
-                key={index}
-                to={`${config.routes.search}?query=${encodeURIComponent(`${item}`)}?type=${typeVideo[0]}|${
-                  typeVideo[1]
-                }`}
-                className={cx('tag-item')}
-                outline
-              >
-                {item}
-              </Button>
-            ))}
-          </div>
-        </div>
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1600);
+  }, [location]);
 
-        <div className={cx('content')}>
-          {searchResult.total === 0 ? (
-            <div className={cx('noresult')}>
-              <span className={cx('rs-text')}>/(ㄒoㄒ)/~~</span>
-              <p className={cx('desc')}>
-                You can try any of the following methods to search again: 1: try changing English keywords; 2 reduce
-                filtration conditions; 3 synonym keyword changes; 4 reduce the number of keywords.
-              </p>
-            </div>
-          ) : (
-            <>
-              <RenderSearchResult data={searchResult} />
-              <div className={cx('more')}>
-                <div className={cx('pagination-simple')}>
-                  <button disabled={isDisabledPrev} className={cx('pagination-btn')} onClick={handlePrev}>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                  </button>
-                  <span className={cx('pagination-number')}>{indexPage}</span>
-                  <button disabled={isDisabledNext} className={cx('pagination-btn')} onClick={handleNext}>
-                    <FontAwesomeIcon icon={faChevronRight} />
-                  </button>
-                </div>
+  return (
+    <div className={cx('container')}>
+      <div className={cx('wrapper')}>
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <div className={cx('header')}>
+              <h2 className={cx('title')}>{`${typeVideo[0]} ${typeVideo[1]} ${query} (${searchResult.total})`}</h2>
+              <div className={cx('tags')}>
+                {tags.map((item, index) => (
+                  <Button
+                    key={index}
+                    to={`${config.routes.search}?query=${encodeURIComponent(`${item}`)}?type=${typeVideo[0]}|${
+                      typeVideo[1]
+                    }`}
+                    className={cx('tag-item')}
+                    outline
+                  >
+                    {item}
+                  </Button>
+                ))}
               </div>
-            </>
-          )}
-        </div>
+            </div>
+
+            <div className={cx('content')}>
+              {searchResult.total === 0 ? (
+                <div className={cx('noresult')}>
+                  <span className={cx('rs-text')}>/(ㄒoㄒ)/~~</span>
+                  <p className={cx('desc')}>
+                    You can try any of the following methods to search again: 1: try changing English keywords; 2 reduce
+                    filtration conditions; 3 synonym keyword changes; 4 reduce the number of keywords.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <RenderSearchResult data={searchResult} />
+                  <div className={cx('more')}>
+                    <div className={cx('pagination-simple')}>
+                      <button disabled={isDisabledPrev} className={cx('pagination-btn')} onClick={handlePrev}>
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                      </button>
+                      <span className={cx('pagination-number')}>{indexPage}</span>
+                      <button disabled={isDisabledNext} className={cx('pagination-btn')} onClick={handleNext}>
+                        <FontAwesomeIcon icon={faChevronRight} />
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

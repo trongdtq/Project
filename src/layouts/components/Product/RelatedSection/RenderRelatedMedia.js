@@ -15,7 +15,7 @@ function RenderRelatedMedia({ data = [], onClick }) {
 
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }, [location]);
 
   if (data.length === 0) return;

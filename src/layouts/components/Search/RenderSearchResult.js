@@ -1,27 +1,29 @@
-import { CircularProgress } from '@mui/material';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import Loading from '~/components/Loading';
 
 import MediaItem from '~/components/MediaItem';
 
-function RenderSearchResult({ data = [], onClick }) {
+function RenderSearchResult({ data = [] }) {
   const [loading, setLoading] = useState(true);
-
-  const location = useLocation();
 
   useEffect(() => {
     setLoading(true);
     if (!!data) {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 500);
     }
-  }, [location]);
+  }, [data]);
 
   // console.log('data', !!data);
   if (data.length === 0) return;
 
-  return <>{loading ? <CircularProgress /> : data.hits.map((item) => <MediaItem key={item.id} data={item} />)}</>;
+  return <>{loading ? <Loading /> : data.hits.map((item) => <MediaItem key={item.id} data={item} />)}</>;
 }
+
+RenderSearchResult.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default RenderSearchResult;

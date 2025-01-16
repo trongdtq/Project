@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './MediaItem.module.scss';
 import Image from '../Image';
 import config from '~/config';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -66,5 +67,10 @@ function MediaItem({ data, className }) {
     </div>
   );
 }
+
+MediaItem.propTypes = {
+  data: PropTypes.object.isRequired,
+  className: PropTypes.string,
+};
 
 export default MediaItem;

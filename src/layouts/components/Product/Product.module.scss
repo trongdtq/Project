@@ -21,10 +21,11 @@
   flex: auto;
 }
 .detail-img {
-  align-items: center;
   width: 100%;
   max-height: 710px;
+  overflow: hidden;
   display: flex;
+  align-items: center;
   flex-direction: column;
 
   .img {
@@ -32,12 +33,22 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    animation: hideShow 0.35s ease-in-out;
   }
 
   .title-img {
     font-size: 1.8rem;
     color: var(--black);
     margin: 24px 0;
+  }
+
+  @keyframes hideShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
 

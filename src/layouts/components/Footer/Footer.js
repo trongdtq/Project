@@ -81,7 +81,7 @@ function Footer() {
           </Link>
           <span> ABC Company ABC Vietnam Network Technology ©2013-2024 All rights reserved </span>
           <Link className={cx('text')} to="#">
-            ICP Việt Nam
+            ICP VietNam
           </Link>
         </div>
       </div>

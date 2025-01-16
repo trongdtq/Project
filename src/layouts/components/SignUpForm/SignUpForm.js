@@ -8,7 +8,7 @@ import styles from './SignUpForm.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import config from '~/config';
-import Validator from './Validator';
+import ValidatorForm from '~/components/ValidatorForm';
 
 const cx = classNames.bind(styles);
 
@@ -18,11 +18,15 @@ function SignUpForm() {
   const [isShowPasswordConfirma, setIsShowPasswordConfirma] = useState(false);
 
   useEffect(() => {
-    Validator(formRef.current, {
-      onSubmit: function (date) {
-        console.log('date', date);
+    ValidatorForm(
+      formRef.current,
+      {
+        onSubmit: function (date) {
+          console.log('date', date);
+        },
       },
-    });
+      styles,
+    );
   }, []);
 
   const handleShowHidePassword = () => {
@@ -47,7 +51,7 @@ function SignUpForm() {
               className={cx('form-control')}
               placeholder=" "
               name="fullName"
-              autocomplete="username"
+              autoComplete="username"
               rules="required"
               type="text"
             />
@@ -63,7 +67,7 @@ function SignUpForm() {
               className={cx('form-control')}
               placeholder=" "
               name="password"
-              autocomplete="new-password"
+              autoComplete="new-password"
               rules="required|min:6"
               type={isShowPassword ? 'text' : 'password'}
             />
@@ -82,7 +86,7 @@ function SignUpForm() {
               className={cx('form-control')}
               name="password-confirmation"
               placeholder=" "
-              autocomplete="new-password"
+              autoComplete="new-password"
               rules="required|isConfirmed:password"
               type={isShowPasswordConfirma ? 'text' : 'password'}
             />

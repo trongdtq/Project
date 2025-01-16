@@ -94,6 +94,7 @@ function RelatedSection({ valueRelated, type }) {
           <div className={cx('related-section')}>
             <RenderRelatedMedia data={relateResult} />
           </div>
+
           <div className={cx('section-more', disabledMore)}>
             <div className={cx('pagination-simple')}>
               <Button outline className={cx('pagination-btn')} onClick={handleMore}>

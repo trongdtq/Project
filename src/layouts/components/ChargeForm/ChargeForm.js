@@ -20,23 +20,22 @@ function ChargeForm() {
           <div className={cx('main-content')}>
             <div className={cx('package-item')}>
               <div className={cx('head')}>
-                <p className={cx('head-title')}>Gói cổ điển hàng năm</p>
+                <p className={cx('head-title')}>Classic Annual Package</p>
               </div>
 
               <div className={cx('body')}>
                 <h3 className={cx('desc')}>
-                  Giấy phép tiêu chuẩn vĩnh viễn · Có thể tải xuống ở mọi kích thước (ngoại trừ cực lớn) · Tải xuống
-                  trong vòng một năm
+                  Standard Perpetual License · Downloadable in any size (except extra large) · Downloads for one year
                 </h3>
 
                 <div className={cx('price-list')}>
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-yearly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>25 lượt tải xuống </span>
+                      <span className={cx('item-number')}>25 downloads</span>
                       <span className={cx('item-price')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -47,18 +46,18 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>3.50</b> / lần tải xuống
+                        <b>3.50</b> / one download
                       </span>
                     </label>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-yearly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>100 lượt tải xuống </span>
+                      <span className={cx('item-number')}>100 downloads </span>
                       <span className={cx('item-price')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -69,18 +68,18 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>3.20</b> / lần tải xuống
+                        <b>3.20</b> / one download
                       </span>
                     </label>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-yearly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>200 lượt tải xuống</span>
+                      <span className={cx('item-number')}>200 downloads</span>
                       <span className={cx('item-price', 'sale')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -91,18 +90,18 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>2.80</b> / lần tải xuống
+                        <b>2.80</b> / one download
                       </span>
                     </label>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-yearly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>500 lượt tải xuống </span>
+                      <span className={cx('item-number')}>500 downloads</span>
                       <span className={cx('item-price', 'sale')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -113,7 +112,7 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>2.40</b> / lần tải xuống
+                        <b>2.40</b> / one download
                       </span>
                     </label>
                   </div>
@@ -121,18 +120,18 @@ function ChargeForm() {
 
                 <div className={cx('category')}>
                   <div className={cx('category-number')}>
-                    <span>500 trở lên</span>
+                    <span>500 and up</span>
                   </div>
                   <div className={cx('category-btn')}>
                     <Button className={cx('btn')} square>
-                      Hỏi đáp dịch vụ Khách hàng
+                      Customer Service FAQ
                     </Button>
                   </div>
                 </div>
 
                 <div className={cx('subscribe')}>
                   <Button className={cx('subscribe-btn')} square>
-                    Mua
+                    Buy
                   </Button>
                 </div>
               </div>
@@ -140,32 +139,31 @@ function ChargeForm() {
 
             <div className={cx('package-item')}>
               <div className={cx('head')}>
-                <p className={cx('head-title')}>gói thuê bao hàng tháng</p>
+                <p className={cx('head-title')}>Monthly Subscription Package</p>
               </div>
 
               <div className={cx('body')}>
                 <h3 className={cx('desc')}>
-                  Giấy phép tiêu chuẩn vĩnh viễn · Có thể tải xuống ở mọi kích thước (ngoại trừ cực lớn) · Tải xuống
-                  trong vòng 30 ngày/360 ngày
+                  Standard Perpetual License · Downloadable in any size (except extra large) · Download within 30 days
                 </h3>
 
                 <div className={cx('price-list')}>
                   <div className={cx('price-item', 'item-date')}>
                     <Button className={cx('item-btn')} square>
-                      30 ngày
+                      30 Days
                     </Button>
-                    <Button className={cx('item-btn')} square>
-                      365 ngày
+                    <Button disable className={cx('item-btn')} square>
+                      365 Days
                     </Button>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-monthly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>100 lượt tải xuống </span>
+                      <span className={cx('item-number')}>100 downloads</span>
                       <span className={cx('item-price')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -176,14 +174,14 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>3.20</b> / lần tải xuống
+                        <b>3.20</b> / one download
                       </span>
                     </label>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-monthly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
@@ -198,18 +196,18 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>2.80</b> / lần tải xuống
+                        <b>2.80</b> / one download
                       </span>
                     </label>
                   </div>
 
                   <div className={cx('price-item')}>
                     <div className={cx('item-radio')}>
-                      <input className={cx('radio')} type="radio" value="1" />
+                      <input className={cx('radio')} name={'price-monthly'} type="radio" value="1" />
                     </div>
 
                     <label className={cx('radio-content')}>
-                      <span className={cx('item-number')}>500 lượt tải xuống </span>
+                      <span className={cx('item-number')}>500 downloads</span>
                       <span className={cx('item-price', 'sale')}>
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
@@ -220,7 +218,7 @@ function ChargeForm() {
                         <i>
                           <FontAwesomeIcon icon={faDollar} />
                         </i>
-                        <b>2.40</b> / lần tải xuống
+                        <b>2.40</b> / one download
                       </span>
                     </label>
                   </div>
@@ -228,18 +226,18 @@ function ChargeForm() {
 
                 <div className={cx('category')}>
                   <div className={cx('category-number')}>
-                    <span>2500 trở lên</span>
+                    <span>2500 and up </span>
                   </div>
                   <div className={cx('category-btn')}>
                     <Button className={cx('btn')} square>
-                      Hỏi đáp dịch vụ Khách hàng
+                      Customer Service FAQ
                     </Button>
                   </div>
                 </div>
 
                 <div className={cx('subscribe')}>
                   <Button className={cx('subscribe-btn')} square>
-                    Mua
+                    Buy
                   </Button>
                 </div>
               </div>
@@ -258,15 +256,16 @@ function ChargeForm() {
 
         <div className={cx('offers-info')}>
           <p>
-            Giấy phép hình ảnh do gói cung cấp là giấy phép tiêu chuẩn vĩnh viễn (không áp dụng cho ủy quyền mở rộng);
-            gói có thể tải xuống ảnh và hình ảnh vector ở mọi kích thước (ngoại trừ số lượt tải xuống trong gói hàng năm
-            có giá trị là 1); năm và số lượt tải xuống trong gói đăng ký hàng tháng có giá trị trong 1 năm. Số có hiệu
-            lực trong 30 ngày và số lượt tải vượt quá thời hạn sẽ bị vô hiệu sau khi hết hạn. Mua gói hơn 999
+            The image license provided by the package is a standard perpetual license (no extended authorization is
+            applicable) the package can download photos and vector images of any size (except the number of downloads in
+            the annual package is valid for 1) year and the number of downloads in the monthly subscription package is
+            valid for 1 year. The number is valid for 30 days and the number of downloads exceeding the period will be
+            invalid after expiration. Purchase a package of more than{' '}
             <i>
               <FontAwesomeIcon icon={faDollar} />
-            </i>{' '}
-            trong vòng một năm để nâng cấp lên VIP của công ty. Không thể mua gói hàng năm và gói thuê bao hàng tháng
-            cùng lúc.
+            </i>
+            999 within a year to upgrade to the company's VIP. The annual package and the monthly subscription package
+            cannot be purchased at the same time.
           </p>
         </div>
 

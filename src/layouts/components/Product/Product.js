@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faCircleCheck, faShareNodes, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { faBookmark, faHeart, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faCircleCheck, faShareNodes, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faCircleDown, faHeart, faMessage } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faHeartSolid, faBookmark as faBookmarkSolid } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Product.module.scss';
@@ -12,15 +12,16 @@ import Image from '~/components/Image';
 import Button from '~/components/Button';
 import config from '~/config';
 import RelatedSection from './RelatedSection';
+import Loading from '~/components/Loading';
 
 const cx = classNames.bind(styles);
 
 function Product() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
   const [product, setProduct] = useState([]);
   const [typeImage, setTypeImage] = useState(true);
   const [activeLike, setActiveLike] = useState(false);
   const [activeSave, setActiveSave] = useState(false);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
   // get query parameters from URL
   const idProduct = new URLSearchParams(location.search).get('id');
@@ -28,6 +29,7 @@ function Product() {
   query = query[0];
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     let imageType;
     let typeQuery;
     let videosType = '';
@@ -93,23 +95,35 @@ function Product() {
     setActiveSave(!activeSave);
   };
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, [product]);
+
   return (
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
         <div className={cx('detail-wrap')}>
           <div className={cx('detail-content')}>
             <div className={cx('detail-img')}>
-              {typeImage ? (
-                <Image className={cx('img')} src={product.largeImageURL} />
+              {loading ? (
+                <Loading />
               ) : (
-                <video key={product.videos?.large?.url} className={cx('img')} controls>
-                  <source src={product.videos.large.url} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <>
+                  {typeImage ? (
+                    <Image className={cx('img')} src={product.largeImageURL} />
+                  ) : (
+                    <video key={product.videos?.large?.url} className={cx('img')} controls>
+                      <source src={product.videos.large.url} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
+                </>
               )}
               <p className={cx('title-img')}>{`Images on the topic ${product.tags}.`}</p>
             </div>
-
             <RelatedSection valueRelated={limitedTags} type={product.type} />
           </div>
 
@@ -136,7 +150,7 @@ function Product() {
                     <Button
                       className={cx('btn-downLoad')}
                       primary
-                      rightIcon={<FontAwesomeIcon icon={faAngleDown} />}
+                      rightIcon={<FontAwesomeIcon icon={faCircleDown} />}
                       onClick={handleDownload}
                     >
                       DownLoad

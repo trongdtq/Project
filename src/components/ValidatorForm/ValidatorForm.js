@@ -1,6 +1,6 @@
-import styles from './LoginForm.module.scss';
+// import styles from './LoginForm.module.scss';
 
-function Validator(formSelector, options = {}) {
+function ValidatorForm(formSelector, options = {}, styles) {
   // Get the parent element
   const getParent = (element, selector) => {
     while (element.parentElement) {
@@ -158,4 +158,4 @@ function Validator(formSelector, options = {}) {
   return <div></div>;
 }
 
-export default Validator;
+export default ValidatorForm;

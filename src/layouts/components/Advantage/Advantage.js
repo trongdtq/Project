@@ -2,8 +2,8 @@ import classNames from 'classnames/bind';
 
 import styles from './Advantage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFile, faFileLines, faMoneyBill1, faNewspaper } from '@fortawesome/free-regular-svg-icons';
-import { faMobileScreen, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
+import { faFileLines, faMoneyBill1, faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import { faMobileScreen } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 

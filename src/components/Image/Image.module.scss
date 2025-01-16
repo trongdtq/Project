@@ -1,4 +1,13 @@
 .wrapper {
-    overflow: hidden;
+  overflow: hidden;
+  animation: hideShow 1.3s ease-in-out;
+}
+
+@keyframes hideShow {
+  from {
+    opacity: 0;
   }
-  
+  to {
+    opacity: 1;
+  }
+}

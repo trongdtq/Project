@@ -1,13 +1,5 @@
 import classNames from 'classnames/bind';
-import {
-  faArrowUpFromBracket,
-  faBell,
-  faClockRotateLeft,
-  faDollarSign,
-  faGear,
-  faLandmark,
-  faRightToBracket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpFromBracket, faDollarSign, faGear, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Tippy from '@tippyjs/react';
@@ -20,7 +12,7 @@ import styles from './Header.module.scss';
 import ShowPicture from './ShowPicture';
 import Image from '~/components/Image';
 import Menu from '~/components/Menu';
-import { faAddressCard, faCreditCard, faStar } from '@fortawesome/free-regular-svg-icons';
+import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -34,30 +26,9 @@ function Header() {
       to: '/user',
     },
     {
-      icon: <FontAwesomeIcon icon={faStar} />,
-      title: 'Images Collection',
-      to: '/collection',
-    },
-    {
       icon: <FontAwesomeIcon icon={faArrowUpFromBracket} />,
       title: 'Upload',
       to: '/upload',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faClockRotateLeft} />,
-      title: 'Purchase History',
-      to: '/request',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faLandmark} />,
-      title: 'Business Functions',
-      to: '/logout',
-      separate: true, // hiển thị vạch
-    },
-    {
-      icon: <FontAwesomeIcon icon={faBell} />,
-      title: 'Notification Center',
-      to: '/notify',
     },
     {
       icon: <FontAwesomeIcon icon={faGear} />,
@@ -67,7 +38,8 @@ function Header() {
     {
       icon: <FontAwesomeIcon icon={faRightToBracket} />,
       title: 'Logout',
-      to: '/',
+      to: '',
+      separate: true,
     },
   ];
 
@@ -94,11 +66,10 @@ function Header() {
             <span className={cx('customer-service')}>Online customer service</span>
           </Tippy>
 
-          <Button text className={cx('cart')} to={config.routes.shoppingcart}>
+          {/* <Button text className={cx('cart')} to={config.routes.shoppingcart}>
             Cart
-          </Button>
+          </Button> */}
 
-          {/* Menu */}
           {currentUser ? (
             <Menu items={MENU_ITEMS}>
               <div className={cx('user-avatar')}>
