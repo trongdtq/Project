@@ -14,8 +14,7 @@ function Filterbar() {
 
       <div className={cx('pop-tags')}>
         <Button
-          // to={`${config.routes.search}?query=${encodeURIComponent('Oriental characters')}?type=all`}
-          to={`/project-ochre-eight.vercel.app/search?query=${encodeURIComponent('Oriental characters')}?type=all`}
+          to={`${config.routes.search}?query=${encodeURIComponent('Oriental characters')}?type=all`}
           className={cx('pop-item')}
           square
         >
