@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Project/static/css/main.f255d987.css",
+    "main.js": "/Project/static/js/main.62ff35eb.js",
+    "static/js/453.53babe88.chunk.js": "/Project/static/js/453.53babe88.chunk.js",
+    "static/media/backgroundLogin.jpg": "/Project/static/media/backgroundLogin.8cd8dc1bad2f89244a2a.jpg",
+    "static/media/background-no-media.png": "/Project/static/media/background-no-media.bfc1ed3d21d48585be7a.png",
+    "static/media/logoFeLi-l.png": "/Project/static/media/logoFeLi-l.7601b81915506cda9c87.png",
+    "static/media/logoFeLi.svg": "/Project/static/media/logoFeLi.19dc3689c5832bc581d103dcc998fc3c.svg",
+    "index.html": "/Project/index.html",
+    "main.f255d987.css.map": "/Project/static/css/main.f255d987.css.map",
+    "main.62ff35eb.js.map": "/Project/static/js/main.62ff35eb.js.map",
+    "453.53babe88.chunk.js.map": "/Project/static/js/453.53babe88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f255d987.css",
+    "static/js/main.62ff35eb.js"
+  ]
+}
