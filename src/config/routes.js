@@ -2,7 +2,7 @@ const routes = {
   home: '/',
   charge: '/charge',
   user: '/user',
-  search: '/search',
+  search: './search',
   login: '/login',
   profile: '/profile',
   settings: '/profile/settings',
