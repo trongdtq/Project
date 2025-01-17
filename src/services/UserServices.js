@@ -3,7 +3,6 @@ import * as httpRequest from '~/utils/httpRequest';
 const productDetail = async ({ videos, q, lang = 'en', id, image_type, video_type }) => {
   try {
     const key = '47157071-54d0225a2d41b1fcea499adfb';
-    // https://pixabay.com/api/?key=47157071-54d0225a2d41b1fcea499adfb&id=1875384
     const res = await httpRequest.get(`api/${videos}/`, {
       params: {
         key,
@@ -14,7 +13,6 @@ const productDetail = async ({ videos, q, lang = 'en', id, image_type, video_typ
         video_type,
       },
     });
-    // return res.hits;
     return res.hits;
   } catch (error) {
     console.log(error);

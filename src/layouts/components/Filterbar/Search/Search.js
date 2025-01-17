@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import Tippy from '@tippyjs/react/headless';
 
 import styles from './Search.module.scss';
 import config from '~/config';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
-import Tippy from '@tippyjs/react/headless';
 
 const cx = classNames.bind(styles);
 
@@ -101,7 +101,7 @@ function Search() {
       return;
     }
 
-    const searchQuery = searchValue; // data to be transmitted
+    const searchQuery = searchValue;
     window.location.href = `${config.routes.search}?query=${encodeURIComponent(searchQuery)}?type=${encodeURIComponent(
       typeMedia,
     )}`;

@@ -33,7 +33,7 @@ function UserLayout() {
             <p className={cx('follwing')}>0 Following</p>
           </div>
         </div>
-        {/* style hover buttons */}
+
         <Tippy hideOnClick={false} content="Message" placement="bottom">
           <div className={cx('message')}>
             <Button to={config.routes.messages} className={cx('btn')}>

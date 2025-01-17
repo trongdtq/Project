@@ -103,7 +103,6 @@ function Slider() {
             attr={index}
             ref={(el) => (dots.current[index] = el)}
             className={cx('dot', { active: index === currentIndex })}
-            // className={cx('dot')}
           >
             <Image className={cx('dot-img')} alt={item.title} src={item.hrefImage} />
           </div>

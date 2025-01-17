@@ -1,5 +1,3 @@
-// import styles from './LoginForm.module.scss';
-
 function ValidatorForm(formSelector, options = {}, styles) {
   // Get the parent element
   const getParent = (element, selector) => {

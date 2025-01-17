@@ -13,11 +13,7 @@ export const search = async ({
   pretty = true,
 }) => {
   try {
-    // đang xủ lý ở đây  const res = await httpRequest.get(`api/${videos}/`, { call dc API but chưa render đc
     const key = '47157071-54d0225a2d41b1fcea499adfb';
-    // const url = `https://pixabay.com/api/?key=${apiKey}&q=yellow+flowers&image_type=photo&pretty=true`;
-    // https://pixabay.com/api/videos/?key=47157071-54d0225a2d41b1fcea499adfb&q=yellow+flowers
-    // https://pixabay.com/api/videos/?key=47157071-54d0225a2d41b1fcea499adfb&q=yellow+flowers&pretty=truevideo_type=animation
     const res = await httpRequest.get(`api/${videos}/`, {
       params: {
         key,
@@ -31,7 +27,6 @@ export const search = async ({
         pretty,
       },
     });
-    // return res.hits;
     return res;
   } catch (error) {
     console.log(error);

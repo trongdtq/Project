@@ -16,7 +16,6 @@ function RenderSearchResult({ data = [] }) {
     }
   }, [data]);
 
-  // console.log('data', !!data);
   if (data.length === 0) return;
 
   return <>{loading ? <Loading /> : data.hits.map((item) => <MediaItem key={item.id} data={item} />)}</>;

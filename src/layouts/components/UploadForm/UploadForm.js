@@ -1,8 +1,8 @@
+import Tippy from '@tippyjs/react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
-
-import styles from './Upload.module.scss';
-import Button from '~/components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleQuestion, faImage } from '@fortawesome/free-regular-svg-icons';
 import {
   faChartColumn,
   faClipboardCheck,
@@ -11,9 +11,9 @@ import {
   faMusic,
   faVideo,
 } from '@fortawesome/free-solid-svg-icons';
-import { faCircleQuestion, faImage } from '@fortawesome/free-regular-svg-icons';
-import Tippy from '@tippyjs/react';
-import { useState } from 'react';
+
+import styles from './Upload.module.scss';
+import Button from '~/components/Button';
 import config from '~/config';
 import { IconMedia } from '~/components/Icons';
 
