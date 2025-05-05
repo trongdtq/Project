@@ -84,3 +84,14 @@
   cursor: pointer;
   display: flex;
 }
+
+// Responsive
+
+@media (max-width: 739px) {
+  .menu-picture {
+    display: none;
+  }
+  .customer-service {
+    display: none;
+  }
+}

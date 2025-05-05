@@ -20,7 +20,11 @@ function Filterbar() {
         >
           Oriental characters
         </Button>
-        <Button to={`${config.routes.search}?query=${encodeURIComponent('illustration')}?type=all`} square>
+        <Button
+          to={`${config.routes.search}?query=${encodeURIComponent('illustration')}?type=all`}
+          className={cx('pop-item')}
+          square
+        >
           illustration
         </Button>
         <Button

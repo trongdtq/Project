@@ -11,7 +11,7 @@ function Poster() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('poster')}>
-        <div className={cx('item')} style={{ width: 50 + '%', height: 560 }}>
+        <div className={cx('item')} style={{ width: 50 + '%', height: 100 + '%' }}>
           <Link
             to={`${config.routes.search}?query=${encodeURIComponent('Visual Inspiration')}?type=all`}
             className={cx('item-link')}
@@ -27,7 +27,7 @@ function Poster() {
           </Link>
         </div>
 
-        <div className={cx('item')} style={{ height: 280 }}>
+        <div className={cx('item')} style={{ height: 50 + '%' }}>
           <Link
             to={`${config.routes.search}?query=${encodeURIComponent('Oriental Character')}?type=all`}
             className={cx('item-link')}
@@ -43,7 +43,7 @@ function Poster() {
           </Link>
         </div>
 
-        <div className={cx('item')} style={{ height: 280 }}>
+        <div className={cx('item')} style={{ height: 50 + '%' }}>
           <Link
             to={`${config.routes.search}?query=${encodeURIComponent('Image Coupon')}?type=all`}
             className={cx('item-link')}
@@ -59,7 +59,7 @@ function Poster() {
           </Link>
         </div>
 
-        <div className={cx('item')} style={{ width: 50 + '%', height: 280 }}>
+        <div className={cx('item')} style={{ width: 50 + '%', height: 50 + '%' }}>
           <Link
             to={`${config.routes.search}?query=${encodeURIComponent('Tourism Industry Gallery')}?type=all`}
             className={cx('item-link')}

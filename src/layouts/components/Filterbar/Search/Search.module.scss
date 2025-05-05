@@ -104,3 +104,19 @@ input {
     background-color: rgba(22, 24, 35, 0.12);
   }
 }
+
+// Responsive
+@media (max-width: 739px) {
+  .search {
+    width: 84%;
+    border-radius: 24px;
+
+    .selection-media {
+      padding: 0 10px 0 0;
+    }
+
+    .search-btn {
+      font-size: 2rem;
+    }
+  }
+}
