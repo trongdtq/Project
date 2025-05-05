@@ -27,8 +27,12 @@
 // Responsive
 @media (max-width: 739px) {
   .pop-tags {
+    margin-top: 20px;
+
     .pop-item {
-      margin-left: 10px;
+      margin-left: 6px;
+      min-width: 80px;
+      font-weight: 400;
     }
   }
 }
