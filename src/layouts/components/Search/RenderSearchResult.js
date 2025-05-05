@@ -4,7 +4,7 @@ import Loading from '~/components/Loading';
 
 import MediaItem from '~/components/MediaItem';
 
-function RenderSearchResult({ data = [] }) {
+function RenderSearchResult({ data = [], className, classNameMainCard }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,17 @@ function RenderSearchResult({ data = [] }) {
 
   if (data.length === 0) return;
 
-  return <>{loading ? <Loading /> : data.hits.map((item) => <MediaItem key={item.id} data={item} />)}</>;
+  return (
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        data.hits.map((item) => (
+          <MediaItem key={item.id} data={item} className={className} classNameMainCard={classNameMainCard} />
+        ))
+      )}
+    </>
+  );
 }
 
 RenderSearchResult.propTypes = {

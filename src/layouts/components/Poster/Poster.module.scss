@@ -41,7 +41,7 @@
 // Responsive
 @media (max-width: 768px) {
   .poster {
-    height: 450px;
+    height: 440px;
     padding: 0px 10px;
 
     .item {
@@ -49,7 +49,7 @@
     }
 
     .item .caption {
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: 300;
       width: calc(100% - 8px);
       padding: 5px 2px;

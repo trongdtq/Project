@@ -112,3 +112,51 @@
     border-color: var(--black);
   }
 }
+
+// Responsive
+@media (max-width: 739px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .header {
+    padding: 20px 24px;
+
+    .title {
+      font-size: 2rem;
+    }
+
+    .tags {
+      margin-top: 16px;
+    }
+
+    .tags .tag-item {
+      font-size: 1.2rem;
+      font-weight: 500;
+      min-width: 0px;
+      padding: 4px 10px;
+      margin: 2px;
+    }
+  }
+
+  .content {
+    padding: 20px 16px;
+    gap: 0;
+
+    .item-result {
+      max-width: 33.3%;
+      width: 100%;
+      height: 180px;
+      padding: 4px;
+      box-shadow: none;
+    }
+
+    .item-result_img {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .more {
+      margin-top: 10%;
+    }
+  }
+}

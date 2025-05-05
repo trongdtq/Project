@@ -146,7 +146,11 @@ function SearchProduct() {
                 </div>
               ) : (
                 <>
-                  <RenderSearchResult data={searchResult} />
+                  <RenderSearchResult
+                    data={searchResult}
+                    className={cx('item-result')}
+                    classNameMainCard={cx('item-result_img')}
+                  />
                   <div className={cx('more')}>
                     <div className={cx('pagination-simple')}>
                       <button disabled={isDisabledPrev} className={cx('pagination-btn')} onClick={handlePrev}>

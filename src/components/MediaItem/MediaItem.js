@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
-function MediaItem({ data, className }) {
+function MediaItem({ data, className, classNameMainCard }) {
   const [typeImage, setTypeImage] = useState(true);
 
   const videoRef = useRef();
@@ -47,7 +47,7 @@ function MediaItem({ data, className }) {
   return typeImage ? (
     <div className={cx(styles.item, className)}>
       <Link to={`${config.routes.productDetail}?id=${encodeURIComponent(data.id)}?type=${data.type}`}>
-        <Image className={cx('item-img')} src={data.largeImageURL} />
+        <Image className={cx('item-img', classNameMainCard)} src={data.largeImageURL} />
       </Link>
     </div>
   ) : (
