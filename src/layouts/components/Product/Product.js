@@ -142,7 +142,7 @@ function Product() {
                 <div className={cx('buttons')}>
                   <div className={cx('subscribe')}>
                     <Button to={config.routes.charge} className={cx('btn-subscribe')}>
-                      FeLiImage Premium
+                      Premium
                     </Button>
                   </div>
 
@@ -227,12 +227,14 @@ function Product() {
                       <Image className={cx('img-avatar')} src={product.userImageURL} />
                     </a>
                   </div>
+
                   <div className={cx('usernameFollowers-container')}>
                     <a href="/" className={cx('username')}>
                       {product.user}
                     </a>
                     <span className={cx('followers')}>{`${product.comments} followers`}</span>
                   </div>
+
                   <div className={cx('button-followers')}>
                     <Button className={cx('btn-fl')} leftIcon={<FontAwesomeIcon icon={faUserPlus} />}>
                       Followers

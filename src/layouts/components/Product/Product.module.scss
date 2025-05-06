@@ -30,6 +30,7 @@
 
   .img {
     max-width: 888px;
+    max-height: 85vh;
     min-height: 300px;
     width: 100%;
     height: 100%;
@@ -102,11 +103,17 @@
   .buttons {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
+  }
+
+  .subscribe {
+    width: 100%;
   }
 
   .btn-subscribe {
     font-size: 1.4rem;
     font-weight: 500;
+    width: 100%;
     border: 1px solid #ceced2;
     border-radius: 20px;
   }
@@ -232,5 +239,176 @@
   .btn-donate:hover {
     color: var(--green);
     border-color: var(--green);
+  }
+}
+
+// Responsive
+
+// Tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .detail-content {
+    .title-img {
+      margin: 16px 0;
+    }
+  }
+
+  .detail-outer {
+    width: 40%;
+
+    .inner-outer {
+    }
+
+    .head-outer {
+      padding: 12px;
+    }
+
+    .head-outer .license {
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .head-outer .icon-license {
+      font-size: 1.2rem;
+    }
+
+    .btn-subscribe {
+      color: var(--black);
+    }
+
+    .btn-subscribe,
+    .btn-downLoad {
+      font-size: 1.4rem;
+      font-weight: 400;
+      padding: 8px 12px;
+    }
+
+    .middle-outer {
+      padding: 12px;
+    }
+
+    .middle-outer .btn-tool-notext,
+    .middle-outer .btn-tool {
+      font-size: 1.4rem;
+      min-width: unset;
+      padding: 6px 10px;
+    }
+
+    .middle-outer .btn-tool-notext {
+      padding: 6px 12px;
+    }
+
+    .footer-outer {
+      padding: 12px;
+    }
+
+    .footer-outer .footer-account {
+      align-items: center;
+    }
+
+    .footer-account .img-avatar {
+      width: 36px;
+      height: 36px;
+    }
+
+    .footer-outer .usernameFollowers-container {
+      width: 45%;
+    }
+
+    .usernameFollowers-container .username {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .usernameFollowers-container .followers {
+      font-size: 0.9rem;
+    }
+
+    .footer-outer .button-followers {
+      font-size: 1rem;
+      padding: 6px 0px 6px 12px;
+      min-width: unset;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 739px) {
+  .wrapper {
+    padding: 0;
+  }
+
+  .detail-wrap {
+    flex-direction: column-reverse;
+  }
+
+  .detail-content {
+    .img {
+      max-height: 80vh;
+    }
+
+    .title-img {
+      margin: 20px 16px;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+  }
+
+  .detail-outer {
+    width: 100%;
+    padding-bottom: 24px;
+    margin: 0;
+
+    .inner-outer {
+      position: unset;
+      border: unset;
+      box-shadow: unset;
+    }
+
+    .head-outer {
+      padding: 24px 16px 12px 16px;
+    }
+
+    .head-outer .license {
+      width: 100%;
+    }
+
+    .head-outer .icon-license {
+      font-size: 1.6rem;
+    }
+
+    .head-outer .buttons {
+      gap: 8px;
+    }
+
+    .subscribe,
+    .downLoad {
+      flex: 50%;
+    }
+
+    .btn-subscribe,
+    .btn-downLoad {
+      width: 100%;
+    }
+
+    .middle-outer {
+      padding: 6px 16px;
+      border: unset;
+    }
+
+    .middle-outer .expanding-section {
+      display: none;
+    }
+
+    .footer-outer {
+      border: 1px solid rgba(25, 27, 38, 0.08);
+      border-radius: 16px;
+      padding: 16px 24px;
+      margin: 12px 16px;
+    }
+
+    .footer-outer .img-avatar {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

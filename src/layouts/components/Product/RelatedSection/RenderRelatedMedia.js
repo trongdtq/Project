@@ -25,7 +25,9 @@ function RenderRelatedMedia({ data = [], onClick }) {
       {data.length === 0 && loading ? (
         <CircularProgress />
       ) : (
-        data.map((item, index) => <MediaItem key={item.id} data={item} className={styles.item} />)
+        data.map((item, index) => (
+          <MediaItem key={item.id} data={item} className={styles.item} classNameMainCard={styles.img} />
+        ))
       )}
     </>
   );
