@@ -79,6 +79,7 @@ function Slider() {
       <div className={cx('slider-list')}>
         {dataImage.map((item, index) => (
           <Link
+            rel="preload"
             ref={(el) => (sliderImages.current[index] = el)}
             key={index}
             to={`${config.routes.search}?query=${encodeURIComponent(item.title)}?type=all`}

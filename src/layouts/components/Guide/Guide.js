@@ -203,7 +203,7 @@ function Guide() {
                     to={`${config.routes.search}?query=${encodeURIComponent(item.desc)}?type=all`}
                     className={cx('item-link')}
                   >
-                    <Image className={cx('item-img')} src={item.hrefImage} />
+                    <Image className={cx('item-img')} alt={item.desc} src={item.hrefImage} />
                     <span className={cx('item-icon')}>
                       <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </span>
