@@ -14,7 +14,7 @@ export const search = async ({
 }) => {
   try {
     const key = '47157071-54d0225a2d41b1fcea499adfb';
-    const res = await httpRequest.get(`api/${videos}/`, {
+    const res = await httpRequest.get(`api${videos}/`, {
       params: {
         key,
         q,
