@@ -90,7 +90,7 @@ function RelatedSection({ valueRelated, type }) {
         </div>
 
         <div className={cx('content')}>
-          <h2 className={cx('title-section')}>Related images</h2>
+          <h2 className={cx('title-section')}>Related {typeVideo.replace('/', '') || 'images'}</h2>
           <div className={cx('related-section')}>
             <RenderRelatedMedia data={relateResult} />
           </div>

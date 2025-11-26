@@ -52,8 +52,6 @@ function SearchProduct() {
         } else {
           videosType = '';
         }
-        console.log('videosType[1]:', videosType[1]);
-        console.log('type:', videosType, imageType);
 
         setTypeVideo([typeQuery, videosType]);
         imageType = '';
@@ -130,9 +128,9 @@ function SearchProduct() {
                 {tags.map((item, index) => (
                   <Button
                     key={index}
-                    to={`${config.routes.search}?query=${encodeURIComponent(`${item}`)}?type=${typeVideo[0]}|${
-                      typeVideo[1]
-                    }`}
+                    to={`${config.routes.search}?query=${encodeURIComponent(`${item}`)}?type=${
+                      typeVideo[0]
+                    }|${typeVideo[1].replace('/', '')}`}
                     className={cx('tag-item')}
                     outline
                   >
