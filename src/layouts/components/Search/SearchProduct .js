@@ -46,7 +46,14 @@ function SearchProduct() {
         videosType = querySeparation[1].split('|');
         typeQuery = videosType[0].split('=');
         typeQuery = typeQuery[1];
-        videosType = videosType[1];
+
+        if (videosType[1]) {
+          videosType = `/${videosType[1]}`;
+        } else {
+          videosType = '';
+        }
+        console.log('videosType[1]:', videosType[1]);
+        console.log('type:', videosType, imageType);
 
         setTypeVideo([typeQuery, videosType]);
         imageType = '';

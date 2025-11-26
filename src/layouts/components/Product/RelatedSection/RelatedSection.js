@@ -31,8 +31,8 @@ function RelatedSection({ valueRelated, type }) {
     let videosType = '';
 
     if (type === 'film' || type === 'animation') {
-      videosType = 'videos';
-      setTypeVideo('videos');
+      videosType = '/videos';
+      setTypeVideo('/videos');
     }
 
     const fetchApi = async () => {

@@ -42,7 +42,11 @@ function Product() {
       if (querySeparation[1].includes('|')) {
         videosType = querySeparation[1].split('|');
 
-        videosType = videosType[1];
+        if (videosType[1]) {
+          videosType = `/${videosType[1]}`;
+        } else {
+          videosType = '';
+        }
 
         imageType = '';
         typeQuery = videosType[0].split('=');
